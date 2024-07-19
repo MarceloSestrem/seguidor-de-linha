@@ -395,61 +395,6 @@ namespace Seguidor_de_Linha {
         }
     }
 
-    //% blockId=robotbit_matrix_draw block="Matrix Draw|X %x|Y %y"
-    //% group="Módulos" weight=44
-    export function MatrixDraw(x: number, y: number): void {
-        if (!initializedMatrix) {
-            matrixInit();
-            initializedMatrix = true;
-        }
-        x = Math.round(x)
-        y = Math.round(y)
-
-        let idx = y * 2 + Math.idiv(x, 8);
-
-        let tmp = matBuf[idx + 1];
-        tmp |= (1 << (x % 8));
-        matBuf[idx + 1] = tmp;
-    }
-
-    //% blockId=robotbit_matrix_refresh block="Matrix Refresh"
-    //% group="Modules" weight=43
-    export function MatrixRefresh(): void {
-        if (!initializedMatrix) {
-            matrixInit();
-            initializedMatrix = true;
-        }
-        matrixShow();
-    }
-
-    /*
-    //% blockId=robotbit_matrix_clean block="Matrix Clean|X %x|Y %y"
-    //% group="Servo" weight=68
-    export function MatrixClean(x: number, y: number): void {
-        if (!initializedMatrix) {
-            matrixInit();
-            initializedMatrix = true;
-        }
-        let idx = y * 2 + x / 8;
-        // todo: bitwise not throw err 
-        matBuf[idx + 1] &=~(1 << (x % 8));
-        matrixShow();
-    }
-    */
-
-    //% blockId=robotbit_matrix_clear block="Matrix Clear"
-    //% group="Módulos" weight=42
-    //% blockGap=50
-    export function MatrixClear(): void {
-        if (!initializedMatrix) {
-            matrixInit();
-            initializedMatrix = true;
-        }
-        for (let i = 0; i < 16; i++) {
-            matBuf[i + 1] = 0;
-        }
-        matrixShow();
-    }
     const MICROBIT_LABCODE_ULTRASONIC_OBJECT_DETECTED_ID = 798;
     const MAX_ULTRASONIC_TRAVEL_TIME = 300 * DistanceUnit.CM;
     const ULTRASONIC_MEASUREMENTS = 3;
