@@ -10,7 +10,7 @@ const enum DistanceUnit {
 }
 
 //% color="#31C7D5" weight=10 icon="\uf1d0"
-namespace LAB_CODE {
+namespace Seguidor_de_Linha {
     const PCA9685_ADDRESS = 0x40
     const MODE1 = 0x00
     const MODE2 = 0x01
