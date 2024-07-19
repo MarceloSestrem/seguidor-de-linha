@@ -237,7 +237,7 @@ namespace Seguidor_de_Linha {
      * @param index Servo Channel; eg: S1
      * @param degree [-45-225] degree of servo; eg: -45, 90, 225
     */
-    //% blockId=robotbit_gservo block="Geek Servo|%index| ângulo %degree"
+    //% blockId=robotbit_gservo block="Servo Geek|%index| ângulo %degree"
     ///% group="Servo" weight=61
     //% degree.min=-45 degree.max=225
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
@@ -256,7 +256,7 @@ namespace Seguidor_de_Linha {
     * @param index Servo Channel; eg: S1
     * @param degree [0-360] degree of servo; eg: 0, 180, 360
     */
-    //% blockId=robotbit_gservo2kg block="GeekServo2KG|%index|ângulo %degree"
+    //% blockId=robotbit_gservo2kg block="Servo Geek 2KG|%index|ângulo %degree"
     //% group="Servo" weight=60
     //% blockGap=50
     //% degree.min=0 degree.max=360
@@ -277,7 +277,7 @@ namespace Seguidor_de_Linha {
     * @param index Servo Channel; eg: S1
     * @param degree [0-360] degree of servo; eg: 0, 180, 360
     */
-    //% blockId=robotbit_gservo5kg block="GeekServo5KG|%index|ângulo %degree"
+    //% blockId=robotbit_gservo5kg block="Servo Geek 5KG|%index|ângulo %degree"
     //% group="Servo" weight=59
     //% degree.min=0 degree.max=360
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
@@ -295,7 +295,7 @@ namespace Seguidor_de_Linha {
         setPwm(index + 7, 0, value)
     }
 
-    //% blockId=robotbit_gservo5kg_motor block="GeekServo5KG_MotorEN|%index|Velocidade %speed"
+    //% blockId=robotbit_gservo5kg_motor block="Servo Geek 5KG_MotorEN|%index|Velocidade %speed"
     //% group="Servo" weight=58
     //% speed.min=-255 speed.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
@@ -311,89 +311,6 @@ namespace Seguidor_de_Linha {
         const v_us = ((speed - minInput) / (maxInput - minInput)) * (maxOutput - minOutput) + minOutput;
         let value = v_us * 4096 / 20000
         setPwm(index + 7, 0, value)
-    }
-
-
-    //% blockId=robotbit_stepper_degree block="Stepper 28BYJ-48|%index|ângulo %degree"
-    //% group="Motores" weight=54
-    export function StepperDegree(index: Steppers, degree: number): void {
-        if (!initialized) {
-            initPCA9685()
-        }
-        setStepper(index, degree > 0);
-        degree = Math.abs(degree);
-        basic.pause(10240 * degree / 360);
-        MotorStopAll()
-    }
-
-
-    //% blockId=robotbit_stepper_turn block="Stepper 28BYJ-48|%index|turn %turn"
-    //% group="Motores" weight=53
-    export function StepperTurn(index: Steppers, turn: Turns): void {
-        let degree = turn;
-        StepperDegree(index, degree);
-    }
-
-    //% blockId=robotbit_stepper_dual block="Passo duplo (grau) |M1 %degree1| M2 %degree2"
-    //% group="Motores" weight=52
-    export function StepperDual(degree1: number, degree2: number): void {
-        if (!initialized) {
-            initPCA9685()
-        }
-        setStepper(1, degree1 > 0);
-        setStepper(2, degree2 > 0);
-        degree1 = Math.abs(degree1);
-        degree2 = Math.abs(degree2);
-        basic.pause(10240 * Math.min(degree1, degree2) / 360);
-        if (degree1 > degree2) {
-            stopMotor(3); stopMotor(4);
-            basic.pause(10240 * (degree1 - degree2) / 360);
-        } else {
-            stopMotor(1); stopMotor(2);
-            basic.pause(10240 * (degree2 - degree1) / 360);
-        }
-
-        MotorStopAll()
-    }
-
-    /**
-     * Stepper Car move forward
-     * @param distance Distance to move in cm; eg: 10, 20
-     * @param diameter diameter of wheel in mm; eg: 48
-    */
-    //% blockId=robotbit_stpcar_move block="Carro para frente|Distância (cm) %distance|Wheel Diâmetro(mm) %diameter"
-    //% group="Motores" weight=51
-    export function StpCarMove(distance: number, diameter: number): void {
-        if (!initialized) {
-            initPCA9685()
-        }
-        let delay = 10240 * 10 * distance / 3 / diameter; // use 3 instead of pi
-        setStepper(1, delay > 0);
-        setStepper(2, delay > 0);
-        delay = Math.abs(delay);
-        basic.pause(delay);
-        MotorStopAll()
-    }
-
-    /**
-     * Stepper Car turn by degree
-     * @param turn Degree to turn; eg: 90, 180, 360
-     * @param diameter diameter of wheel in mm; eg: 48
-     * @param track track width of car; eg: 125
-    */
-    //% blockId=robotbit_stpcar_turn block="Turno do carro|Velocidade %turn|Diâmetro da roda(omm) %diameter|trajeto(mm) %track"
-    //% group="Motores" weight=50
-    //% blockGap=50
-    export function StpCarTurn(turn: number, diameter: number, track: number): void {
-        if (!initialized) {
-            initPCA9685()
-        }
-        let delay = 10240 * turn * track / 360 / diameter;
-        setStepper(1, delay < 0);
-        setStepper(2, delay > 0);
-        delay = Math.abs(delay);
-        basic.pause(delay);
-        MotorStopAll()
     }
 
     //% blockId=robotbit_motor_run block="Motor|%index|velocidade %speed"
