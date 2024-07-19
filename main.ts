@@ -377,7 +377,7 @@ namespace Seguidor_de_Linha {
 
 
 
-    //% blockId=robotbit_stop block="Motor stop|%index|"
+    //% blockId=robotbit_stop block="Parar Motor|%index|"
     //% group="Motores" weight=56
     export function MotorStop(index: Motors): void {
         MotorRun(index, 0);
