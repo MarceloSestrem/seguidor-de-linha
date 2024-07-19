@@ -9,7 +9,7 @@ const enum DistanceUnit {
     INCH = 148, // Duration of echo round-trip in Microseconds (uS) for two inches, 343 m/s at sea level and 20°C
 }
 
-//% color="#363bdd" weight=10 icon="\u272c"
+//% color="#363bdd" weight=13 icon="\U272c"
 namespace Seguidor_de_Linha {
     const PCA9685_ADDRESS = 0x40
     const MODE1 = 0x00
