@@ -436,7 +436,7 @@ namespace Seguidor_de_Linha {
      */
     //% group="Ultrassônico"
     //% blockId="labcode_ultrasonico_connectado"
-    //% block="connecte o sensor de distancia ultrassônica | com Trig em %trig | e Echo em %echo"
+    //% block="Sensor de distancia ultrassônica | Trig em %trig | e Echo em %echo"
     //% trig.fieldEditor="gridpicker"
     //% trig.fieldOptions.columns=4
     //% trig.fieldOptions.tooltips="false"
@@ -627,6 +627,7 @@ namespace Seguidor_de_Linha {
             basic.pause(TIME_BETWEEN_PULSE_MS);
         }
     }
+    //% group="Linha"
     let leftSensorPin: AnalogPin.P0;
     let rightSensorPin: AnalogPin.P1;
 
