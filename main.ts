@@ -520,8 +520,8 @@ namespace Seguidor_de_Linha {
     let leftSensorValue: number = 0;
     let rightSensorValue: number = 0;
     const ALPHA = 0.5; // Fator de suavização (entre 0 e 1)
-
-        //% blockId=CALIBRANDO_SENSOR_LINHA block="calibrando sensores"
+    //% group="Linha"
+    //% blockId=CALIBRANDO_SENSOR_LINHA block="calibrando sensores"
     //% weight=90
     export function calibrate(): void {
         basic.showString("B");
@@ -542,19 +542,19 @@ namespace Seguidor_de_Linha {
 
         basic.showIcon(IconNames.Yes);
     }
-
+     //% group="Linha"
     //% blockId=GRAVANDO_SENSOR_ESQUERDO block="Sensor esquerdo"
     //% weight=80
     export function readLeftSensor(): number {
         return Math.round(getFilteredReading(leftSensorPin, false));
     }
-
+      //% group="Linha"
     //% blockId=GRAVANDO_SENSOR_DIREITO block="Sensor direito"
     //% weight=80
     export function readRightSensor(): number {
         return Math.round(getFilteredReading(rightSensorPin, false));
     }
-
+      //% group="Linha"
     //% blockId=ativando_sensores block="sensor ativo %sensor"
     //% weight=70
     export function ativando(sensor: SegueLinhaSensor): boolean {
@@ -594,7 +594,7 @@ namespace Seguidor_de_Linha {
             return rightSensorValue;
         }
     }
-
+ 
     // Enum for sensors
     export enum SegueLinhaSensor {
         //% block="Esquerdo"
