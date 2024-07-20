@@ -521,14 +521,7 @@ namespace Seguidor_de_Linha {
     let rightSensorValue: number = 0;
     const ALPHA = 0.5; // Fator de suavização (entre 0 e 1)
 
-    //% blockId=criando_sensores_linha block="Direcionando o sensor esquerdo em %leftPin| e o sensor direito em %rightPin"
-    //% weight=100 blockSetVariable=sensorlinha
-    export function create(leftPin: AnalogPin.P0, rightPin: AnalogPin.P1): void {
-        leftSensorPin = leftPin;
-        rightSensorPin = rightPin;
-    }
-
-    //% blockId=CALIBRANDO_SENSOR_LINHA block="calibrando sensores"
+        //% blockId=CALIBRANDO_SENSOR_LINHA block="calibrando sensores"
     //% weight=90
     export function calibrate(): void {
         basic.showString("B");
