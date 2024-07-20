@@ -359,23 +359,6 @@ namespace Seguidor_de_Linha {
         MotorRun(motor2, speed2);
     }
     /**
-         * Execute single motors at the same time speed
-         * @param motor1 First Motor; eg: M1A, M1B
-         * @param speed1 [-255-255] speed of motor; eg: 150, -150
-         * @param motor2 Second Motor; eg: M2A, M2B
-         * @param speed2 [-255-255] speed of motor; eg: 150, -150
-        */
-    //% blockId=robotbit_motor_dual_speed block="Motores|%motor1|velocidade %speed1|%motor2|velocidade %speed2"
-    //% group="Motores" weight=58
-    //% speed1.min=-255 speed1.max=255
-    //% speed2.min=-255 speed2.max=255
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function MotorRunDualtime(motor1: Motors, speed1: number, motor2: Motors, speed2: number,delay: number): void {
-        MotorRun(motor1, speed1);
-        MotorRun(motor2, speed2);
-    }
-
-    /**
      * Execute single motors with delay
      * @param index Motor Index; eg: M1A, M1B, M2A, M2B
      * @param speed [-255-255] speed of motor; eg: 150, -150
