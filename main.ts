@@ -546,13 +546,13 @@ namespace Seguidor_de_Linha {
     //% blockId=GRAVANDO_SENSOR_ESQUERDO block="Sensor esquerdo"
     //% weight=80
     export function readLeftSensor(): number {
-        return Math.round(getFilteredReading(leftSensorPin, false));
+        return Math.round(getFilteredReading(leftSensorPin, true));
     }
       //% group="Linha"
     //% blockId=GRAVANDO_SENSOR_DIREITO block="Sensor direito"
     //% weight=80
     export function readRightSensor(): number {
-        return Math.round(getFilteredReading(rightSensorPin, false));
+        return Math.round(getFilteredReading(rightSensorPin, true));
     }
       //% group="Linha"
     //% blockId=ativando_sensores block="sensor ativo %sensor"
