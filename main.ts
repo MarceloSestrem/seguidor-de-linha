@@ -511,7 +511,7 @@ namespace Seguidor_de_Linha {
     /**
      * Get line sensor state [0-1]
     */
-    //% blockId=CodoLineRead
+    //% blockId=LineRead
     
     //% block="sensor Digital de Linha|%pin|"
     //% group="Sensores de linha"
@@ -535,7 +535,7 @@ namespace Seguidor_de_Linha {
 
     //% block="Sensor Esquerdo Analógico|%pin|"
     //% group="Sensores de linha"
-    export function esquerdoanalog(pin: AnalogPin.P0): number {
+    export function esquerdoanalog(pin: AnalogPin): number {
         return pins.analogReadPin(pin);
     }
     /**
@@ -563,7 +563,7 @@ namespace Seguidor_de_Linha {
      //%param esquerdodig pin connected, eg: DigitalPin.P0
     //% block="sensor Digital Esquerdo|%esquerdodig|"
     //% group="Sensores de linha"
-    export function esquerdodig(pin: DigitalPin.P0): number {
+    export function esquerdodig(pin: DigitalPin): number {
         return pins.digitalReadPin(pin);
     }
     /**
