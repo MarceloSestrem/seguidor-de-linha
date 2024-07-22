@@ -1,5 +1,5 @@
 /*
-Robõ Seguidor de linha versão 1.0
+Robô Seguidor de linha versão 0.2.0
 */
 const enum DistanceUnit {
     //% block="cm"
