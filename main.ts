@@ -532,7 +532,7 @@ namespace Seguidor_de_Linha {
     //% blockId=LineAnalogleft
     //% block="Sensor Esquerdo Analógico|%pin|"
     //% group="Sensores de linha"
-    export function esquerdoanalog(pin: AnalogPin): number {
+    export function esquerdoanalog(pin: AnalogPin.P0): number {
         return pins.analogReadPin(pin);
     }
     /**
@@ -541,7 +541,7 @@ namespace Seguidor_de_Linha {
     //% blockId=LineAnalogRigth
     //% block="Sensor Direito Analógico|%pin|"
     //% group="Sensores de linha"
-    export function direitoanalog(pin: AnalogPin): number {
+    export function direitoanalog(pin: AnalogPin.P1): number {
         return pins.analogReadPin(pin);
     }
     /**
@@ -550,7 +550,7 @@ namespace Seguidor_de_Linha {
     //% blockId=LineAnalogcenter
     //% block="Sensor central Analógico|%pin|"
     //% group="Sensores de linha"
-    export function centralanalog(pin: AnalogPin): number {
+    export function centralanalog(pin: AnalogPin.P2): number {
         return pins.analogReadPin(pin);
     }
     /**
@@ -559,7 +559,7 @@ namespace Seguidor_de_Linha {
     //% blockId=Linhaesquerda
     //% block="sensor Digital Esquerdo|%pin|"
     //% group="Sensores de linha"
-    export function esquerdodig(pin: DigitalPin): number {
+    export function esquerdodig(pin: DigitalPin.P0): number {
         return pins.digitalReadPin(pin);
     }
     /**
@@ -568,7 +568,7 @@ namespace Seguidor_de_Linha {
     //% blockId=Linhacentral
     //% block="sensor Digital Central|%pin|"
     //% group="Sensores de linha"
-    export function centraldig(pin: DigitalPin): number {
+    export function centraldig(pin: DigitalPin.P1): number {
         return pins.digitalReadPin(pin);
     }
     /**
@@ -577,7 +577,7 @@ namespace Seguidor_de_Linha {
     //% blockId=linhadireita
     //% block="sensor Digital Direito|%pin|"
     //% group="Sensores de linha"
-    export function direitodig(pin: DigitalPin): number {
+    export function direitodig(pin: DigitalPin.P2): number {
         return pins.digitalReadPin(pin);
     }
 }
