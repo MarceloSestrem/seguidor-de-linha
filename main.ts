@@ -533,7 +533,7 @@ namespace Seguidor_de_Linha {
             */
     //% blockId=LineAnalogleft
 
-    //% block="Sensor Esquerdo Analógico|%pin|"
+    //% block="Sensor Esquerdo Analógico|%pin.P0|"
     //% group="Sensores de linha"
     export function esquerdoanalog(pin: AnalogPin): number {
         return pins.analogReadPin(pin);
@@ -542,7 +542,7 @@ namespace Seguidor_de_Linha {
             * Get line sensor state [0-1023]
            */
     //% blockId=LineAnalogRigth
-    //% block="Sensor Direito Analógico|%pin|"
+    //% block="Sensor Direito Analógico|%pin.P2|"
     //% group="Sensores de linha"
     export function direitoanalog(pin: AnalogPin): number {
         return pins.analogReadPin(pin);
@@ -551,7 +551,7 @@ namespace Seguidor_de_Linha {
             * Get line sensor state [0-1023]
            */
     //% blockId=LineAnalogcenter
-    //% block="Sensor central Analógico|%pin|"
+    //% block="Sensor central Analógico|%pin.P1|"
     //% group="Sensores de linha"
     export function centralanalog(pin: AnalogPin): number {
         return pins.analogReadPin(pin);
