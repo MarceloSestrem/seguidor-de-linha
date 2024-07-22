@@ -529,7 +529,7 @@ namespace Seguidor_de_Linha {
     /**
              * Get line sensor state [0-1023]
             */
-    //% blockId=LineAnalogRead
+    //% blockId=LineAnalogleft
     //% block="Sensor Esquerdo Analógico|%pin|"
     //% group="Sensores de linha"
     export function esquerdoanalog(pin: AnalogPin): number {
@@ -538,7 +538,7 @@ namespace Seguidor_de_Linha {
     /**
             * Get line sensor state [0-1023]
            */
-    //% blockId=LineAnalogRead
+    //% blockId=LineAnalogRigth
     //% block="Sensor Direito Analógico|%pin|"
     //% group="Sensores de linha"
     export function direitoanalog(pin: AnalogPin): number {
@@ -547,7 +547,7 @@ namespace Seguidor_de_Linha {
     /**
             * Get line sensor state [0-1023]
            */
-    //% blockId=LineAnalogRead
+    //% blockId=LineAnalogcenter
     //% block="Sensor central Analógico|%pin|"
     //% group="Sensores de linha"
     export function centralanalog(pin: AnalogPin): number {
@@ -556,7 +556,7 @@ namespace Seguidor_de_Linha {
     /**
          * Get line sensor state [0-1]
         */
-    //% blockId=CodoLineRead
+    //% blockId=Linhaesquerda
     //% block="sensor Digital Esquerdo|%pin|"
     //% group="Sensores de linha"
     export function esquerdodig(pin: DigitalPin): number {
@@ -565,7 +565,7 @@ namespace Seguidor_de_Linha {
     /**
         * Get line sensor state [0-1]
        */
-    //% blockId=CodoLineRead
+    //% blockId=Linhacentral
     //% block="sensor Digital Central|%pin|"
     //% group="Sensores de linha"
     export function centraldig(pin: DigitalPin): number {
@@ -574,7 +574,7 @@ namespace Seguidor_de_Linha {
     /**
         * Get line sensor state [0-1]
        */
-    //% blockId=CodoLineRead
+    //% blockId=linhadireita
     //% block="sensor Digital Direito|%pin|"
     //% group="Sensores de linha"
     export function direitodig(pin: DigitalPin): number {
