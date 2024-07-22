@@ -558,6 +558,7 @@ namespace Seguidor_de_Linha {
         */
     //% blockId=Linhaesquerda
     //% block="sensor Digital Esquerdo|%pin|"
+    //%param esquerdodig pin connected, eg: DigitalPin.P0
     //% group="Sensores de linha"
     export function esquerdodig(pin: DigitalPin.P0): number {
         return pins.digitalReadPin(pin);
@@ -567,17 +568,20 @@ namespace Seguidor_de_Linha {
        */
     //% blockId=Linhacentral
     //% block="sensor Digital Central|%pin|"
+    //%param centraldig pin connected, eg: DigitalPin.P1
     //% group="Sensores de linha"
-    export function centraldig(pin: DigitalPin.P1): number {
+    export function centraldig(pin: DigitalPin): number {
         return pins.digitalReadPin(pin);
     }
     /**
         * Get line sensor state [0-1]
        */
+    
     //% blockId=linhadireita
     //% block="sensor Digital Direito|%pin|"
-    //% group="Sensores de linha"
-    export function direitodig(pin: DigitalPin.P2): number {
+    //%param direitodig pin connected, eg: DigitalPin.P2
+        //% group="Sensores de linha"
+    export function direitodig(pin: DigitalPin): number {
         return pins.digitalReadPin(pin);
     }
 }
