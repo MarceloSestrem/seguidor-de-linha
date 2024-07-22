@@ -512,6 +512,7 @@ namespace Seguidor_de_Linha {
      * Get line sensor state [0-1]
     */
     //% blockId=CodoLineRead
+    
     //% block="sensor Digital de Linha|%pin|"
     //% group="Sensores de linha"
     export function detectline(pin: DigitalPin): number {
@@ -521,6 +522,7 @@ namespace Seguidor_de_Linha {
          * Get line sensor state [0-1023]
         */
     //% blockId=LineAnalogRead
+
     //% block="Sensor Analógico de Linha|%pin|"
     //% group="Sensores de linha"
     export function detecetlinha(pin: AnalogPin): number {
@@ -530,6 +532,7 @@ namespace Seguidor_de_Linha {
              * Get line sensor state [0-1023]
             */
     //% blockId=LineAnalogleft
+
     //% block="Sensor Esquerdo Analógico|%pin|"
     //% group="Sensores de linha"
     export function esquerdoanalog(pin: AnalogPin.P0): number {
@@ -541,7 +544,7 @@ namespace Seguidor_de_Linha {
     //% blockId=LineAnalogRigth
     //% block="Sensor Direito Analógico|%pin|"
     //% group="Sensores de linha"
-    export function direitoanalog(pin: AnalogPin.P1): number {
+    export function direitoanalog(pin: AnalogPin): number {
         return pins.analogReadPin(pin);
     }
     /**
@@ -550,15 +553,15 @@ namespace Seguidor_de_Linha {
     //% blockId=LineAnalogcenter
     //% block="Sensor central Analógico|%pin|"
     //% group="Sensores de linha"
-    export function centralanalog(pin: AnalogPin.P2): number {
+    export function centralanalog(pin: AnalogPin): number {
         return pins.analogReadPin(pin);
     }
     /**
          * Get line sensor state [0-1]
         */
     //% blockId=Linhaesquerda
-    //% block="sensor Digital Esquerdo|%pin|"
-    //%param esquerdodig pin connected, eg: DigitalPin.P0
+     //%param esquerdodig pin connected, eg: DigitalPin.P0
+    //% block="sensor Digital Esquerdo|%esquerdodig|"
     //% group="Sensores de linha"
     export function esquerdodig(pin: DigitalPin.P0): number {
         return pins.digitalReadPin(pin);
@@ -567,8 +570,8 @@ namespace Seguidor_de_Linha {
         * Get line sensor state [0-1]
        */
     //% blockId=Linhacentral
-    //% block="sensor Digital Central|%pin|"
-    //%param centraldig pin connected, eg: DigitalPin.P1
+     //%param centraldig pin connected, eg: DigitalPin.P1
+    //% block="sensor Digital Central|%centraldig|"
     //% group="Sensores de linha"
     export function centraldig(pin: DigitalPin): number {
         return pins.digitalReadPin(pin);
@@ -578,9 +581,9 @@ namespace Seguidor_de_Linha {
        */
     
     //% blockId=linhadireita
-    //% block="sensor Digital Direito|%pin|"
-    //%param direitodig pin connected, eg: DigitalPin.P2
-        //% group="Sensores de linha"
+     //%param direitodig pin connected, eg: DigitalPin.P2
+    //% block="sensor Digital Direito|%direitodig|"
+           //% group="Sensores de linha"
     export function direitodig(pin: DigitalPin): number {
         return pins.digitalReadPin(pin);
     }
