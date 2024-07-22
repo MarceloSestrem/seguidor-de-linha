@@ -318,7 +318,7 @@ namespace Seguidor_de_Linha {
         */
 //% group="Ultrassônico"
     //% blockId="labcode_ultrasonico_conectado"
-    //% block="Sensor Ultrassônico pino TRIG %trig pino ECHO %echo  %unit"
+    //% block="Sensor Ultrassônico pino TRIG %trig pino ECHO %echo |  %unit"
     //% weight=94
     export function readUltrassonic(trig: DigitalPin, echo: DigitalPin): number {
         let data;
