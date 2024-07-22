@@ -309,6 +309,47 @@ namespace Seguidor_de_Linha {
 
     let ultrasonicState: UltrasonicDevice;
 
+
+
+    /**
+        * Acquiring ultrasonic data
+        * @param trig trig pin selection enumeration, eg:DigitalPin.P13
+        * @param echo echo pin selection enumeration, eg:DigitalPin.P14
+        */
+//% group="Ultrassônico"
+    //% blockId="labcode_ultrasonico_conectado"
+    //% block="Sensor Ultrassônico pino TRIG %trig Pino ECHO %echo Distância unit:cm"
+    //% weight=94
+    export function readUltrassonic(trig: DigitalPin, echo: DigitalPin): number {
+        let data;
+        pins.digitalWritePin(trig, 1);
+        basic.pause(1);
+        pins.digitalWritePin(trig, 0)
+        if (pins.digitalReadPin(echo) == 0) {
+            pins.digitalWritePin(trig, 0);
+            pins.digitalWritePin(trig, 1);
+            basic.pause(20);
+            pins.digitalWritePin(trig, 0);
+            data = pins.pulseIn(echo, PulseValue.High, 500 * 58);
+        } else {
+            pins.digitalWritePin(trig, 1);
+            pins.digitalWritePin(trig, 0);
+            basic.pause(20);
+            pins.digitalWritePin(trig, 0);
+            data = pins.pulseIn(echo, PulseValue.High, 500 * 58)
+        }
+        data = data / 59;
+        if (data <= 0)
+            return 0;
+        if (data > 500)
+            return 500;
+        return Math.round(data);
+    }
+
+
+
+
+
     /**
      * Configures the ultrasonic distance sensor and measures continuously in the background.
      * @param trig pin connected to trig, eg: DigitalPin.P12
