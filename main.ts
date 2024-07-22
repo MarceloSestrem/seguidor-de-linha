@@ -417,6 +417,40 @@ namespace Seguidor_de_Linha {
         return Math.idiv(ultrasonicState.medianRoundTrip, unit);
     }
 
+/**
+ * Acquiring ultrasonic data
+ * @param trig trig pin selection enumeration, eg:DigitalPin.P12
+ * @param echo echo pin selection enumeration, eg:DigitalPin.P13
+ */
+//% group="Ultrassônico"
+   //% block="Sensor Ultrassônico pino TRIG %trig Pino ECHO %echo Distância unit:cm"
+//% weight=94
+export function readUltrasonic(trig: DigitalPin, echo: DigitalPin): number {
+    let data;
+    pins.digitalWritePin(trig, 1);
+    basic.pause(1);
+    pins.digitalWritePin(trig, 0)
+    if (pins.digitalReadPin(echo) == 0) {
+        pins.digitalWritePin(trig, 0);
+        pins.digitalWritePin(trig, 1);
+        basic.pause(20);
+        pins.digitalWritePin(trig, 0);
+        data = pins.pulseIn(echo, PulseValue.High, 500 * 58);
+    } else {
+        pins.digitalWritePin(trig, 1);
+        pins.digitalWritePin(trig, 0);
+        basic.pause(20);
+        pins.digitalWritePin(trig, 0);
+        data = pins.pulseIn(echo, PulseValue.High, 500 * 58)
+    }
+    data = data / 59;
+    if (data <= 0)
+        return 0;
+    if (data > 500)
+        return 500;
+    return Math.round(data);
+}
+
     /**
      * Returns `true` if an object is within the specified distance. `false` otherwise
      * @param distance distance to object, eg: 20
@@ -581,7 +615,7 @@ namespace Seguidor_de_Linha {
        */
     
     //% blockId=linhadireita
-     //%param direitodig pin connected, eg: DigitalPin.P2
+     //%param direitodig direitodig pin connected, eg: DigitalPin.P2
     //% block="sensor Digital Direito|%direitodig|"
            //% group="Sensores de linha"
     export function direitodig(pin: DigitalPin): number {
