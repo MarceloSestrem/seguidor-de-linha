@@ -512,19 +512,72 @@ namespace Seguidor_de_Linha {
      * Get line sensor state [0-1]
     */
     //% blockId=CodoLineRead
-    //% block="sensor Digital Linha|%pin|"
-    //% group="Sensors"
+    //% block="sensor Digital de Linha|%pin|"
+    //% group="Sensores de linha"
     export function detectline(pin: DigitalPin): number {
         return pins.digitalReadPin(pin);
     }
     /**
-         * Get line sensor state [0-1]
+         * Get line sensor state [0-1023]
         */
     //% blockId=LineAnalogRead
-    //% block="Sensor Analógico Linha|%pin|"
-    //% group="Sensors"
+    //% block="Sensor Analógico de Linha|%pin|"
+    //% group="Sensores de linha"
     export function detecetlinha(pin: AnalogPin): number {
         return pins.analogReadPin(pin);
     }
-
+    /**
+             * Get line sensor state [0-1023]
+            */
+    //% blockId=LineAnalogRead
+    //% block="Sensor Esquerdo Analógico|%pin|"
+    //% group="Sensores de linha"
+    export function esquerdoanalog(pin: AnalogPin): number {
+        return pins.analogReadPin(pin);
+    }
+    /**
+            * Get line sensor state [0-1023]
+           */
+    //% blockId=LineAnalogRead
+    //% block="Sensor Direito Analógico|%pin|"
+    //% group="Sensores de linha"
+    export function direitoanalog(pin: AnalogPin): number {
+        return pins.analogReadPin(pin);
+    }
+    /**
+            * Get line sensor state [0-1023]
+           */
+    //% blockId=LineAnalogRead
+    //% block="Sensor central Analógico|%pin|"
+    //% group="Sensores de linha"
+    export function centralanalog(pin: AnalogPin): number {
+        return pins.analogReadPin(pin);
+    }
+    /**
+         * Get line sensor state [0-1]
+        */
+    //% blockId=CodoLineRead
+    //% block="sensor Digital Esquerdo|%pin|"
+    //% group="Sensores de linha"
+    export function esquerdodig(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
+    }
+    /**
+        * Get line sensor state [0-1]
+       */
+    //% blockId=CodoLineRead
+    //% block="sensor Digital Central|%pin|"
+    //% group="Sensores de linha"
+    export function centraldig(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
+    }
+    /**
+        * Get line sensor state [0-1]
+       */
+    //% blockId=CodoLineRead
+    //% block="sensor Digital Direito|%pin|"
+    //% group="Sensores de linha"
+    export function direitodig(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
+    }
 }
