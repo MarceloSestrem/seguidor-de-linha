@@ -316,8 +316,8 @@ namespace Seguidor_de_Linha {
         * @param trig trig pin selection enumeration, eg:DigitalPin.P13
         * @param echo echo pin selection enumeration, eg:DigitalPin.P14
         * @param unit unit of distance, eg: DistanceUnit.CM
-        */
-//% group="Ultrassônico"
+        
+    //% group="Ultrassônico"
     //% blockId="labcode_ultrasonico_conectado"
     //% block="Sensor Ultrassônico pino TRIG %trig pino ECHO %echo em %unit"
     //% weight=94
