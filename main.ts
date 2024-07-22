@@ -1,12 +1,11 @@
 /*
-load dependency
-"robotbit": "file:../pxt-robotbit"
+Robõ Seguidor de linha versão 1.0
 */
 const enum DistanceUnit {
     //% block="cm"
-    CM = 58, // Duration of echo round-trip in Microseconds (uS) for two centimeters, 343 m/s at sea level and 20°C
-    //% block="inch"
-    INCH = 148, // Duration of echo round-trip in Microseconds (uS) for two inches, 343 m/s at sea level and 20°C
+    CM = 58, // Duração do eco de ida e volta em microssegundos (uS) para dois centímetros, 343 m/s ao nível do mar e 20°C
+    //% block="Polegada"
+    INCH = 148, // Duração da viagem de ida e volta do eco em microssegundos (uS) para duas polegadas, 343 m/s ao nível do mar e 20°C
 }
 
 //% color="#369ddd"  icon="\uf1b9" block="Seguidor de Linha"
@@ -257,7 +256,7 @@ namespace Seguidor_de_Linha {
         MotorRun(motor2, speed2);
     }
     /**
-     * Execute single motors with delay
+     * Execute motores únicos com atraso
      * @param index Motor Index; eg: M1A, M1B, M2A, M2B
      * @param speed [-255-255] speed of motor; eg: 150, -150
      * @param delay seconde delay to stop; eg: 1
@@ -360,7 +359,7 @@ namespace Seguidor_de_Linha {
     }
 
     /**
-     * Do something when an object is detected the first time within a specified range.
+     * Faça algo quando um objeto for detectado pela primeira vez dentro de um intervalo especificado.
      * @param distance distance to object, eg: 20
      * @param unit unit of distance, eg: DistanceUnit.CM
      * @param handler body code to run when the event is raised
@@ -401,9 +400,9 @@ namespace Seguidor_de_Linha {
     }
 
     /**
-     * Returns the distance to an object in a range from 1 to 300 centimeters or up to 118 inch.
-     * The maximum value is returned to indicate when no object was detected.
-     * -1 is returned when the device is not connected.
+     * Retorna a distância até um objeto no intervalo de 1 a 300 centímetros ou até 118 polegadas.
+     * O valor máximo é retornado para indicar quando nenhum objeto foi detectado.
+     * -1 é retornado quando o dispositivo não está conectado.
      * @param unit unit of distance, eg: DistanceUnit.CM
      */
     //% group="Ultrassônico"
@@ -419,8 +418,7 @@ namespace Seguidor_de_Linha {
     }
 
     /**
-     * Returns `true` if an object is within the specified distance. `false` otherwise.
-     *
+     * Returns `true` if an object is within the specified distance. `false` otherwise
      * @param distance distance to object, eg: 20
      * @param unit unit of distance, eg: DistanceUnit.CM
      */
@@ -435,17 +433,17 @@ namespace Seguidor_de_Linha {
         if (!ultrasonicState) {
             return false;
         }
-        basic.pause(0); // yield to allow background processing when called in a tight loop
+        basic.pause(0); // rendimento para permitir o processamento em segundo plano quando chamado em um loop apertado
         return Math.idiv(ultrasonicState.medianRoundTrip, unit) < distance;
     }
 
     function triggerPulse() {
-        // Reset trigger pin
+        // Reseta o pino trigger
         pins.setPull(ultrasonicState.trig, PinPullMode.PullNone);
         pins.digitalWritePin(ultrasonicState.trig, 0);
         control.waitMicros(2);
 
-        // Trigger pulse
+        // Trigger pulso
         pins.digitalWritePin(ultrasonicState.trig, 1);
         control.waitMicros(10);
         pins.digitalWritePin(ultrasonicState.trig, 0);
@@ -456,7 +454,7 @@ namespace Seguidor_de_Linha {
         return median(roundTripTimes);
     }
 
-    // Returns median value of non-empty input
+    // Retorna o valor mediano da entrada não vazia
     function median(values: number[]) {
         values.sort((a, b) => {
             return a - b;
@@ -493,13 +491,13 @@ namespace Seguidor_de_Linha {
                         MICROBIT_LABCODE_ULTRASONIC_OBJECT_DETECTED_ID,
                         threshold
                     );
-                    // use negative sign to indicate that we notified the event
+                    // use sinal negativo para indicar que notificamos o evento
                     ultrasonicState.travelTimeObservers[i] = -threshold;
                 } else if (
                     threshold < 0 &&
                     ultrasonicState.medianRoundTrip > -threshold
                 ) {
-                    // object is outside the detection threshold -> re-activate observer
+                    // o objeto está fora do limite de detecção -> reativar o observador
                     ultrasonicState.travelTimeObservers[i] = -threshold;
                 }
             }
@@ -509,97 +507,24 @@ namespace Seguidor_de_Linha {
         }
     }
     //% group="Linha"
-    let leftSensorPin: AnalogPin.P0;
-    let rightSensorPin: AnalogPin.P1;
-
-    let whiteLeft: number;
-    let blackLeft: number;
-    let whiteRight: number;
-    let blackRight: number;
-
-    let leftSensorValue: number = 0;
-    let rightSensorValue: number = 0;
-    const ALPHA = 0.5; // Fator de suavização (entre 0 e 1)
-    //% group="Linha"
-    //% blockId=CALIBRANDO_SENSOR_LINHA block="calibrando sensores"
-    //% weight=90
-    export function calibrate(): void {
-        basic.showString("B");
-        while (!input.buttonIsPressed(Button.A)) {
-            basic.pause(100);
-        }
-
-        whiteLeft = getFilteredReading(leftSensorPin, true);
-        whiteRight = getFilteredReading(rightSensorPin, true);
-
-        basic.showString("P");
-        while (!input.buttonIsPressed(Button.B)) {
-            basic.pause(100);
-        }
-
-        blackLeft = getFilteredReading(leftSensorPin, true);
-        blackRight = getFilteredReading(rightSensorPin, true);
-
-        basic.showIcon(IconNames.Yes);
+    
+    /**
+     * Get line sensor state [0-1]
+    */
+    //% blockId=CodoLineRead
+    //% block="sensor Digital Linha|%pin|"
+    //% group="Sensors"
+    export function detectline(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
     }
-     //% group="Linha"
-    //% blockId=GRAVANDO_SENSOR_ESQUERDO block="Sensor esquerdo"
-    //% weight=80
-    export function readLeftSensor(): number {
-        return Math.round(getFilteredReading(leftSensorPin, true));
-    }
-      //% group="Linha"
-    //% blockId=GRAVANDO_SENSOR_DIREITO block="Sensor direito"
-    //% weight=80
-    export function readRightSensor(): number {
-        return Math.round(getFilteredReading(rightSensorPin, true));
-    }
-      //% group="Linha"
-    //% blockId=ativando_sensores block="sensor ativo %sensor"
-    //% weight=70
-    export function ativando(sensor: SegueLinhaSensor): boolean {
-        let sensorValue: number;
-        let whiteValue: number;
-        let blackValue: number;
-
-        if (sensor === SegueLinhaSensor.Left) {
-            sensorValue = Math.round(getFilteredReading(leftSensorPin, false));
-            whiteValue = whiteLeft;
-            blackValue = blackLeft;
-        } else {
-            sensorValue = Math.round(getFilteredReading(rightSensorPin, false));
-            whiteValue = whiteRight;
-            blackValue = blackRight;
-        }
-
-        return (sensorValue > whiteValue && sensorValue < blackValue);
+    /**
+         * Get line sensor state [0-1]
+        */
+    //% blockId=LineAnalogRead
+    //% block="Sensor Analógico Linha|%pin|"
+    //% group="Sensors"
+    export function detecetlinha(pin: AnalogPin): number {
+        return pins.analogReadPin(pin);
     }
 
-    function getFilteredReading(pin: AnalogPin, isCalibration: boolean): number {
-        let currentValue = pins.analogReadPin(pin);
-
-        if (pin === leftSensorPin) {
-            if (isCalibration) {
-                leftSensorValue = currentValue;
-            } else {
-                leftSensorValue = ALPHA * currentValue + (1 - ALPHA) * leftSensorValue;
-            }
-            return leftSensorValue;
-        } else {
-            if (isCalibration) {
-                rightSensorValue = currentValue;
-            } else {
-                rightSensorValue = ALPHA * currentValue + (1 - ALPHA) * rightSensorValue;
-            }
-            return rightSensorValue;
-        }
-    }
- 
-    // Enum for sensors
-    export enum SegueLinhaSensor {
-        //% block="Esquerdo"
-        Left,
-        //% block="Direito"
-        Right
-    }
 }
