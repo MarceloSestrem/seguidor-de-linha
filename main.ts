@@ -630,4 +630,5 @@ namespace Seguidor_de_Linha {
     export function direitodig(pin: DigitalPin): number {
         return pins.digitalReadPin(pin);
     }
+    
 }
