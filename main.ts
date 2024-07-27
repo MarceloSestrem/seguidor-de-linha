@@ -796,7 +796,7 @@ namespace Seguidor_de_Linha {
 
     //% weight=79
     //% blockId="doissensoresa" block="Detectando a linha Analógica %Doissensores | Média= %m"
-    //% group="Sensores de linha V2 (pinos P0, P1 e ou P2)"
+    //% group="Sensores de linha V2 (pinos: P0,  P1 e ou  P2 Cores: Branco = □ e Preto = ■)"
     //% m.min=0 m.max=1023
     export function readDoisa(doisa: Doissensores, m: number): boolean {
 
