@@ -234,6 +234,8 @@ namespace Seguidor_de_Linha {
         matBuf[0] = 0x00;
         pins.i2cWriteBuffer(HT16K33_ADDRESS, matBuf);
     }
+//% group="By Marcelo"
+
 
     //% blockId=robotbit_motor_run block="Motor|%index|velocidade %speed"
     //% group="Motores" weight=59
