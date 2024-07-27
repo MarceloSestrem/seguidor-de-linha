@@ -33,7 +33,7 @@ const enum DistanceUnit {
     INCH = 148, // Duração da viagem de ida e volta do eco em microssegundos (uS) para duas polegadas, 343 m/s ao nível do mar e 20°C
 }
 
-//% color="#369ddd"  icon="\uf1b9" block="Seguidor de Linha By Marcelo"
+//% color="#369ddd"  icon="\uf1b9" block="Seguidor de Linha"
 namespace Seguidor_de_Linha {
     const PCA9685_ADDRESS = 0x40
     const MODE1 = 0x00
@@ -659,44 +659,44 @@ namespace Seguidor_de_Linha {
     }
     //% weight=79
     //% blockId="tresssensores" block="Detectando a linha Digital %Tressensores"
-    //% group="Sensores de linha V2 (pinos P0, P1 e ou P2)"
+    //% group="Sensores de linha V2 (pinos P0, P1 e ou P2 Cores: Branco: □ e Preto: ■)"
     export function readtres(tres: Tressensores): boolean {
 
         // let p1 = pins.digitalReadPin(DigitalPin.P0);
         // let p2 = pins.digitalReadPin(DigitalPin.P1);
         // let p3 = pins.digitalReadPin(DigitalPin.P2);
         if (tres == Tressensores.white_white_white) {
-            if (pins.digitalReadPin(DigitalPin.P0) != 0 && pins.digitalReadPin(DigitalPin.P1) != 0 && pins.digitalReadPin(DigitalPin.P2) != 0) {
+            if (pins.digitalReadPin(DigitalPin.P0) == 0 && pins.digitalReadPin(DigitalPin.P1) == 0 && pins.digitalReadPin(DigitalPin.P2) == 0) {
                 return true;
             } else {
                 return false;
             }
         } else if (tres == Tressensores.white_black_white) {
-            if (pins.digitalReadPin(DigitalPin.P0) == 1 && pins.digitalReadPin(DigitalPin.P1) && pins.digitalReadPin(DigitalPin.P2) == 0) {
+            if (pins.digitalReadPin(DigitalPin.P0) == 0 && pins.digitalReadPin(DigitalPin.P1) == 0 && pins.digitalReadPin(DigitalPin.P2) == 0) {
                 return true;
             } else {
                 return false;
             }
         } else if (tres == Tressensores.black_white_white) {
-            if (pins.digitalReadPin(DigitalPin.P0) == 0 && pins.digitalReadPin(DigitalPin.P1) && pins.digitalReadPin(DigitalPin.P2) == 1) {
+            if (pins.digitalReadPin(DigitalPin.P0) == 1 && pins.digitalReadPin(DigitalPin.P1) == 0 && pins.digitalReadPin(DigitalPin.P2) == 0) {
                 return true;
             } else {
                 return false;
             }
         } else if (tres == Tressensores.black_black_white) {
-            if (pins.digitalReadPin(DigitalPin.P0) == 1 && pins.digitalReadPin(DigitalPin.P1) && pins.digitalReadPin(DigitalPin.P2) == 1) {
+            if (pins.digitalReadPin(DigitalPin.P0) == 1 && pins.digitalReadPin(DigitalPin.P1) == 1 && pins.digitalReadPin(DigitalPin.P2) == 0) {
                 return true;
             } else {
                 return false;
             }
         } else if (tres == Tressensores.white_black_black) {
-            if (pins.digitalReadPin(DigitalPin.P0) == 1 && pins.digitalReadPin(DigitalPin.P1) && pins.digitalReadPin(DigitalPin.P2) == 0) {
+            if (pins.digitalReadPin(DigitalPin.P0) == 0 && pins.digitalReadPin(DigitalPin.P1) == 1 && pins.digitalReadPin(DigitalPin.P2) == 1) {
                 return true;
             } else {
                 return false;
             }
         } else if (tres == Tressensores.black_black_black) {
-            if (pins.digitalReadPin(DigitalPin.P0) == 1 && pins.digitalReadPin(DigitalPin.P1) && pins.digitalReadPin(DigitalPin.P2) == 0) {
+            if (pins.digitalReadPin(DigitalPin.P0) == 1 && pins.digitalReadPin(DigitalPin.P1) == 1 && pins.digitalReadPin(DigitalPin.P2) == 1) {
                 return true;
             } else {
                 return false;
@@ -710,7 +710,7 @@ namespace Seguidor_de_Linha {
 
     //% weight=79
     //% blockId="doissensores" block="Detectando a linha Digital %Doissensores"
-    //% group="Sensores de linha V2 (pinos P0, P1 e ou P2)"
+    //% group="Sensores de linha V2 (pinos P0, P1 e ou P2 Cores: Branco: □ e Preto: ■)"
     export function readDois(dois: Doissensores): boolean {
 
         // let p1 = pins.digitalReadPin(DigitalPin.P0);
@@ -723,13 +723,13 @@ namespace Seguidor_de_Linha {
                 return false;
             }
         } else if (dois == Doissensores.white_black) {
-            if (pins.digitalReadPin(DigitalPin.P0) == 1 && pins.digitalReadPin(DigitalPin.P1) == 0) {
+            if (pins.digitalReadPin(DigitalPin.P0) == 0 && pins.digitalReadPin(DigitalPin.P1) == 1) {
                 return true;
             } else {
                 return false;
             }
         } else if (dois == Doissensores.black_white) {
-            if (pins.digitalReadPin(DigitalPin.P0) == 0 && pins.digitalReadPin(DigitalPin.P1) == 1) {
+            if (pins.digitalReadPin(DigitalPin.P0) == 1 && pins.digitalReadPin(DigitalPin.P1) == 0) {
                 return true;
             } else {
                 return false;
@@ -747,7 +747,7 @@ namespace Seguidor_de_Linha {
 
     //% weight=79
     //% blockId="tresssensoresanalog" block="Detectando a linha Analógica %Tressensores| Média= %m"
-    //% group="Sensores de linha V2 (pinos P0, P1 e ou P2)"
+    //% group="Sensores de linha V2 (pinos P0, P1 e ou P2 Cores: Branco: □ e Preto: ■)"
     //% m.min=0 m.max=1023
     export function readtresa(tresa: Tressensores, m: number): boolean {
 
@@ -798,7 +798,7 @@ namespace Seguidor_de_Linha {
 
     //% weight=79
     //% blockId="doissensoresa" block="Detectando a linha Analógica %Doissensores | Média= %m"
-    //% group="Sensores de linha V2 (pinos: P0,  P1 e ou  P2 Cores: Branco = □ e Preto = ■)"
+    //% group="Sensores de linha V2 (pinos: P0,  P1 e ou  P2 Cores: Branco: □ e Preto: ■)"
     //% m.min=0 m.max=1023
     export function readDoisa(doisa: Doissensores, m: number): boolean {
 
