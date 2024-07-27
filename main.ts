@@ -234,7 +234,8 @@ namespace Seguidor_de_Linha {
         matBuf[0] = 0x00;
         pins.i2cWriteBuffer(HT16K33_ADDRESS, matBuf);
     }
-//% group="By Marcelo"
+//% group="By Marcelo" weight=59
+{}
 
 
     //% blockId=robotbit_motor_run block="Motor|%index|velocidade %speed"
@@ -658,8 +659,8 @@ namespace Seguidor_de_Linha {
         return pins.digitalReadPin(pin);
     }
     //% weight=79
-    //% blockId="tresssensores" block="Detectando a linha Digital %Tressensores"
-    //% group="Sensores de linha V2 (pinos P0, P1 e ou P2 Cores: Branco: □ e Preto: ■)"
+    //% blockId="tresssensores" block="Detecção dos sensores direitodig linha Digital %Tressensores"
+    //% group="Sensores de linha V.2 (pinos P0, P1 e ou P2 Cores: Branco: □ e Preto: ■)"
     export function readtres(tres: Tressensores): boolean {
 
         // let p1 = pins.digitalReadPin(DigitalPin.P0);
@@ -709,7 +710,7 @@ namespace Seguidor_de_Linha {
 
 
     //% weight=79
-    //% blockId="doissensores" block="Detectando a linha Digital %Doissensores"
+    //% blockId="doissensores" block="Detecção dos sensores de linha Digital %Doissensores"
     //% group="Sensores de linha V2 (pinos P0, P1 e ou P2 Cores: Branco: □ e Preto: ■)"
     export function readDois(dois: Doissensores): boolean {
 
@@ -746,7 +747,7 @@ namespace Seguidor_de_Linha {
     }
 
     //% weight=79
-    //% blockId="tresssensoresanalog" block="Detectando a linha Analógica %Tressensores| Média= %m"
+    //% blockId="tresssensoresanalog" block="Detecção dos sensores de linha Analógica %Tressensores| Média= %m"
     //% group="Sensores de linha V2 (pinos P0, P1 e ou P2 Cores: Branco: □ e Preto: ■)"
     //% m.min=0 m.max=1023
     export function readtresa(tresa: Tressensores, m: number): boolean {
@@ -797,7 +798,7 @@ namespace Seguidor_de_Linha {
 
 
     //% weight=79
-    //% blockId="doissensoresa" block="Detectando a linha Analógica %Doissensores | Média= %m"
+    //% blockId="doissensoresa" block="Detecção dos sensores de linha Analógica %Doissensores | Média= %m"
     //% group="Sensores de linha V2 (pinos: P0,  P1 e ou  P2 Cores: Branco: □ e Preto: ■)"
     //% m.min=0 m.max=1023
     export function readDoisa(doisa: Doissensores, m: number): boolean {
