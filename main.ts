@@ -2,9 +2,12 @@
 Robô Seguidor de linha By Marcelo
 */
 enum Sensor {
-    //% block="Esquerdo",
-    //% block="Centro",
+    //% block="Esquerdo"
+    esquerdo,
+    //% block="Centro"
+    centro,
     //% block="Direito"
+    direito
 }
 enum Doissensores {
     //% block="□□"
