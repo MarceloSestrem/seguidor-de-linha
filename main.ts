@@ -589,7 +589,7 @@ namespace Seguidor_de_Linha {
     */
     //% blockId=LineRead
     
-    //% block="sensor Digital de Linha |%Sensor| |%pin|"
+    //% block="sensor Digital de Linha %Sensor |%pin|"
     //% group="Sensores de linha"
     export function detectline(pin: DigitalPin): number {
         return pins.digitalReadPin(pin);
@@ -599,7 +599,7 @@ namespace Seguidor_de_Linha {
         */
     //% blockId=LineAnalogRead
 
-    //% block="Sensor Analógico de Linha |%Sensor| |%pin|"
+    //% block="Sensor Analógico de Linha %Sensor |%pin|"
     //% group="Sensores de linha"
     export function detecetlinha(pin: AnalogPin): number {
         return pins.analogReadPin(pin);
@@ -665,7 +665,7 @@ namespace Seguidor_de_Linha {
     }
     //% weight=79
     //% blockId="tresssensores" block="Detecção dos sensores direitodig linha Digital %Tressensores"
-    //% group="Sensores de linha V.2 (pinos P0, P1 e ou P2 Cores: Branco: □ e Preto: ■)"
+    //% group="Sensores de linha V.2 (pinos: P0, P1 e ou P2 Cores: Branco: □ e Preto: ■)"
     export function readtres(tres: Tressensores): boolean {
 
         // let p1 = pins.digitalReadPin(DigitalPin.P0);
@@ -716,7 +716,7 @@ namespace Seguidor_de_Linha {
 
     //% weight=79
     //% blockId="doissensores" block="Detecção dos sensores de linha Digital %Doissensores"
-    //% group="Sensores de linha V.2 (pinos P0, P1 e ou P2 Cores: Branco: □ e Preto: ■)"
+    //% group="Sensores de linha V.2 (pinos: P0, P1 e ou P2 Cores: Branco: □ e Preto: ■)"
     export function readDois(dois: Doissensores): boolean {
 
         // let p1 = pins.digitalReadPin(DigitalPin.P0);
@@ -753,7 +753,7 @@ namespace Seguidor_de_Linha {
 
     //% weight=79
     //% blockId="tresssensoresanalog" block="Detecção dos sensores de linha Analógica %Tressensores| Média= %m"
-    //% group="Sensores de linha V.2 (pinos P0, P1 e ou P2 Cores: Branco: □ e Preto: ■)"
+    //% group="Sensores de linha V.2 (pinos: P0, P1 e ou P2 Cores: Branco: □ e Preto: ■)"
     //% m.min=0 m.max=1023
     export function readtresa(tresa: Tressensores, m: number): boolean {
 
