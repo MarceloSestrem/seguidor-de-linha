@@ -711,7 +711,7 @@ namespace Seguidor_de_Linha {
 
     //% weight=79
     //% blockId="doissensores" block="Detecção dos sensores de linha Digital %Doissensores"
-    //% group="Sensores de linha V2 (pinos P0, P1 e ou P2 Cores: Branco: □ e Preto: ■)"
+    //% group="Sensores de linha V.2 (pinos P0, P1 e ou P2 Cores: Branco: □ e Preto: ■)"
     export function readDois(dois: Doissensores): boolean {
 
         // let p1 = pins.digitalReadPin(DigitalPin.P0);
@@ -748,7 +748,7 @@ namespace Seguidor_de_Linha {
 
     //% weight=79
     //% blockId="tresssensoresanalog" block="Detecção dos sensores de linha Analógica %Tressensores| Média= %m"
-    //% group="Sensores de linha V2 (pinos P0, P1 e ou P2 Cores: Branco: □ e Preto: ■)"
+    //% group="Sensores de linha V.2 (pinos P0, P1 e ou P2 Cores: Branco: □ e Preto: ■)"
     //% m.min=0 m.max=1023
     export function readtresa(tresa: Tressensores, m: number): boolean {
 
@@ -799,7 +799,7 @@ namespace Seguidor_de_Linha {
 
     //% weight=79
     //% blockId="doissensoresa" block="Detecção dos sensores de linha Analógica %Doissensores | Média= %m"
-    //% group="Sensores de linha V2 (pinos: P0,  P1 e ou  P2 Cores: Branco: □ e Preto: ■)"
+    //% group="Sensores de linha V.2 (pinos: P0,  P1 e ou  P2 Cores: Branco: □ e Preto: ■)"
     //% m.min=0 m.max=1023
     export function readDoisa(doisa: Doissensores, m: number): boolean {
 
