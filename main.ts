@@ -1,6 +1,11 @@
 /*
 Robô Seguidor de linha By Marcelo
 */
+enum Sensor {
+    Esquerdo,
+    Centro,
+    Direito
+}
 enum Doissensores {
     //% block="□□"
     white_white = 1,
@@ -584,7 +589,7 @@ namespace Seguidor_de_Linha {
     */
     //% blockId=LineRead
     
-    //% block="sensor Digital de Linha|%pin|"
+    //% block="sensor Digital de Linha |%Sensor| |%pin|"
     //% group="Sensores de linha"
     export function detectline(pin: DigitalPin): number {
         return pins.digitalReadPin(pin);
@@ -594,7 +599,7 @@ namespace Seguidor_de_Linha {
         */
     //% blockId=LineAnalogRead
 
-    //% block="Sensor Analógico de Linha|%pin|"
+    //% block="Sensor Analógico de Linha |%Sensor| |%pin|"
     //% group="Sensores de linha"
     export function detecetlinha(pin: AnalogPin): number {
         return pins.analogReadPin(pin);
