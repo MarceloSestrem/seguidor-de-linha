@@ -3,11 +3,11 @@ Robô Seguidor de linha By Marcelo
 */
 enum Sensor {
     //% block="Esquerdo"
-    esquerdo,
+    esquerdo = 1,
     //% block="Centro"
-    centro,
+    centro = 2,
     //% block="Direito"
-    direito
+    direito = 3
 }
 enum Doissensores {
     //% block="□□"
@@ -667,7 +667,7 @@ namespace Seguidor_de_Linha {
         return pins.digitalReadPin(pin);
     }
     //% weight=79
-    //% blockId="tresssensores" block="Detecção dos sensores direitodig linha Digital %Tressensores"
+    //% blockId="tresssensores" block="Detecção dos sensores de linha Digital %Tressensores"
 //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: □ e Preto: ■)"
     export function readtres(tres: Tressensores): boolean {
 
