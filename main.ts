@@ -3,9 +3,9 @@ Robô Seguidor de linha By Marcelo
 */
 
 enum Sensor {
-    esquerdo=1,
-    centro=2,
-     direito=3
+    esquerdo = 1,
+    centro = 2,
+     direito = 3
 }
 enum Doissensores {
     //% block="□□"
@@ -593,8 +593,18 @@ namespace Seguidor_de_Linha {
     //% block="sensor Digital de Linha |%Sensor| pino |%pin|"
     //% group="Sensores de linha"
     export function detectline(sensor: Sensor, pin: DigitalPin): number {
-        return pins.digitalReadPin(pin);
-        sensor: Sensor
+        if (sensor== Sensor.esquerdo) {
+            return pins.digitalReadPin(pin);
+        } else if (sensor== Sensor.centro) {
+            return pins.digitalReadPin(pin)
+        } 
+        else if (sensor== Sensor.direito) {
+            return pins.digitalReadPin(pin)
+        }else {
+            return -1
+        }
+    
+
     }
     /**
          * Get line sensor state [0-1023]
@@ -604,8 +614,16 @@ namespace Seguidor_de_Linha {
     //% block="Sensor Analógico de Linha |%Sensor| pino |%pin|"
     //% group="Sensores de linha"
     export function detecetlinha(sensor: Sensor, pin: AnalogPin): number {
-        return pins.analogReadPin(pin);
-       
+        if (sensor == Sensor.esquerdo) {
+            return pins.analogReadPin(pin);
+        } else if (sensor == Sensor.centro) {
+            return pins.analogReadPin(pin);
+        }
+        else if (sensor == Sensor.direito) {
+            return pins.analogReadPin(pin);
+        } else {
+            return -1       
+    }
     }
     /**
              * Get line sensor state [0-1023]
