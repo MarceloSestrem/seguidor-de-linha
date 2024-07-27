@@ -2,12 +2,11 @@
 Robô Seguidor de linha By Marcelo
 */
 enum Sensor {
-    //% block="Esquerdo"
-    esquerdo = 1,
+    esquerdo = Esquerdo,
     //% block="Centro"
-    centro = 2,
+    centro = Centro,
     //% block="Direito"
-    direito = 3
+    direito = Direito
 }
 enum Doissensores {
     //% block="□□"
@@ -607,7 +606,7 @@ namespace Seguidor_de_Linha {
     //% group="Sensores de linha"
     export function detecetlinha(sensor: Sensor, pin: AnalogPin): number {
         return pins.analogReadPin(pin);
-        sensor: Sensor
+       
     }
     /**
              * Get line sensor state [0-1023]
