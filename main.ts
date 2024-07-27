@@ -625,65 +625,7 @@ namespace Seguidor_de_Linha {
             return -1       
     }
     }
-    /**
-             * Get line sensor state [0-1023]
-            */
-    //% blockId=LineAnalogleft
-
-    //% block="Sensor Esquerdo Analógico|%pin|"
-    //% group="Sensores de linha"
-    export function esquerdoanalog(pin: AnalogPin): number {
-        return pins.analogReadPin(pin);
-    }
-    /**
-            * Get line sensor state [0-1023]
-           */
-    //% blockId=LineAnalogRigth
-    //% block="Sensor Direito Analógico|%pin|"
-    //% group="Sensores de linha"
-    export function direitoanalog(pin: AnalogPin): number {
-        return pins.analogReadPin(pin);
-    }
-    /**
-            * Get line sensor state [0-1023]
-           */
-    //% blockId=LineAnalogcenter
-    //% block="Sensor central Analógico|%pin|"
-    //% group="Sensores de linha"
-    export function centralanalog(pin: AnalogPin): number {
-        return pins.analogReadPin(pin);
-    }
-    /**
-         * Get line sensor state [0-1]
-        */
-    //% blockId=Linhaesquerda
-     //%param esquerdodig pin connected, eg: DigitalPin.P0
-    //% block="sensor Digital Esquerdo|%esquerdodig|"
-    //% group="Sensores de linha"
-    export function esquerdodig(pin: DigitalPin): number {
-        return pins.digitalReadPin(pin);
-    }
-    /**
-        * Get line sensor state [0-1]
-       */
-    //% blockId=Linhacentral
-     //%param centraldig pin connected, eg: DigitalPin.P1
-    //% block="sensor Digital Central|%centraldig|"
-    //% group="Sensores de linha"
-    export function centraldig(pin: DigitalPin): number {
-        return pins.digitalReadPin(pin);
-    }
-    /**
-        * Get line sensor state [0-1]
-       */
     
-    //% blockId=linhadireita
-     //%param direitodig direitodig pin connected, eg: DigitalPin.P2
-    //% block="sensor Digital Direito|%direitodig|"
-           //% group="Sensores de linha"
-    export function direitodig(pin: DigitalPin): number {
-        return pins.digitalReadPin(pin);
-    }
     //% weight=79
     //% blockId="tresssensores" block="Detecção dos sensores de linha Digital %Tressensores"
 //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: □ e Preto: ■)"
