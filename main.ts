@@ -1,5 +1,5 @@
 /*
-Robô Seguidor de linha versão 0.2.0
+Robô Seguidor de linha By Marcelo
 */
 enum Doissensores {
     //% block="□□"
@@ -33,7 +33,7 @@ const enum DistanceUnit {
     INCH = 148, // Duração da viagem de ida e volta do eco em microssegundos (uS) para duas polegadas, 343 m/s ao nível do mar e 20°C
 }
 
-//% color="#369ddd"  icon="\uf1b9" block="Seguidor de Linha"
+//% color="#369ddd"  icon="\uf1b9" block="Seguidor de Linha By Marcelo"
 namespace Seguidor_de_Linha {
     const PCA9685_ADDRESS = 0x40
     const MODE1 = 0x00
