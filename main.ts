@@ -594,7 +594,7 @@ namespace Seguidor_de_Linha {
     
     //% block="sensor Digital de Linha %Sensor pino |%pin|"
     //% group="Sensores de linha"
-    export function detectline(pin: DigitalPin, sensor: Sensor): number {
+    export function detectline(sensor: Sensor, pin: DigitalPin): number {
         return pins.digitalReadPin(pin);
     }
     /**
@@ -604,7 +604,7 @@ namespace Seguidor_de_Linha {
 
     //% block="Sensor Analógico de Linha %Sensor pino |%pin|"
     //% group="Sensores de linha"
-    export function detecetlinha(pin: AnalogPin, sensor: Sensor): number {
+    export function detecetlinha(sensor: Sensor, pin: AnalogPin): number {
         return pins.analogReadPin(pin);
     }
     /**
