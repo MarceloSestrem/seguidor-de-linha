@@ -7,6 +7,12 @@ enum Sensor {
     centro = 2,
      direito = 3
 }
+enum Umsensor {
+    //% block="□"
+    white = 1,
+    //% block="■"
+   black = 2
+   }
 enum Doissensores {
     //% block="□□"
     white_white = 1,
@@ -794,6 +800,56 @@ namespace Seguidor_de_Linha {
             }
         } else if (doisa == Doissensores.black_black) {
             if (pins.analogReadPin(AnalogPin.P0) >= m && pins.analogReadPin(AnalogPin.P1) >= m) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return true;
+        }
+    }
+    //% weight=79
+    //% blockId="umsensor" block="Detecção do sensor de linha Analógica %Umsensor | Média = %m"
+    //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: □ e Preto: ■)"
+    //% m.min=0 m.max=1023
+    export function readUma(uma: Umsensor, m: number): boolean {
+
+        // let p1 = pins.analogReadPin(AnalogPin.P0);
+        // let p2 = pins.analogReadPin(AnalogPin.P1);
+
+        if (uma == Umsensor.white) {
+            if (pins.analogReadPin(AnalogPin.P0) <= m && pins.analogReadPin(AnalogPin.P1) <= m) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (uma == Umsensor.black) {
+            if (pins.analogReadPin(AnalogPin.P0) <= m && pins.analogReadPin(AnalogPin.P1) >= m) {
+                return true;
+            } else {
+                return false;
+            }
+        
+        } else {
+            return true;
+        }
+    }
+    //% weight=79
+    //% blockId="umsensor" block="Detecção dos sensores de linha Digital %Umsensor"
+    //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: □ e Preto: ■)"
+    export function readUm(um: Umsensor): boolean {
+
+        // let p1 = pins.digitalReadPin(DigitalPin.P0);
+        // let p2 = pins.digitalReadPin(DigitalPin.P1);
+
+        if (um == Umsensor.white) {
+            if (pins.digitalReadPin(DigitalPin.P0) == 0 && pins.digitalReadPin(DigitalPin.P1) == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (um == Umsensor.black) {
+            if (pins.digitalReadPin(DigitalPin.P0) == 0 && pins.digitalReadPin(DigitalPin.P1) == 1) {
                 return true;
             } else {
                 return false;
