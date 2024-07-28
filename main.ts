@@ -809,7 +809,7 @@ namespace Seguidor_de_Linha {
         }
     }
     //% weight=79
-    //% blockId="umasensor" block="Detecção do sensor de linha Analógica %Umsensor | Média = %m"
+    //% blockId="umasensor" block="Detecção do sensor de linha Analógica (P0) %Umsensor | Média = %m"
     //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: □ e Preto: ■)"
     //% m.min=0 m.max=1023
     export function readUma(uma: Umsensor, m: number): boolean {
@@ -818,13 +818,13 @@ namespace Seguidor_de_Linha {
         // let p2 = pins.analogReadPin(AnalogPin.P1);
 
         if (uma == Umsensor.white) {
-            if (pins.analogReadPin(AnalogPin.P0) <= m && pins.analogReadPin(AnalogPin.P1) <= m) {
+            if (pins.analogReadPin(AnalogPin.P0) <= m ) {
                 return true;
             } else {
                 return false;
             }
         } else if (uma == Umsensor.black) {
-            if (pins.analogReadPin(AnalogPin.P0) <= m && pins.analogReadPin(AnalogPin.P1) >= m) {
+            if (pins.analogReadPin(AnalogPin.P0) <= m ) {
                 return true;
             } else {
                 return false;
@@ -835,7 +835,7 @@ namespace Seguidor_de_Linha {
         }
     }
     //% weight=79
-    //% blockId="umsensor" block="Detecção do sensor de linha Digital %Umsensor"
+    //% blockId="umsensor" block="Detecção do sensor de linha Digital (P0) %Umsensor"
     //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: □ e Preto: ■)"
     export function readUm(um: Umsensor): boolean {
 
@@ -843,13 +843,13 @@ namespace Seguidor_de_Linha {
         // let p2 = pins.digitalReadPin(DigitalPin.P1);
 
         if (um == Umsensor.white) {
-            if (pins.digitalReadPin(DigitalPin.P0) == 0 && pins.digitalReadPin(DigitalPin.P1) == 0) {
+            if (pins.digitalReadPin(DigitalPin.P0) == 0) {
                 return true;
             } else {
                 return false;
             }
         } else if (um == Umsensor.black) {
-            if (pins.digitalReadPin(DigitalPin.P0) == 0 && pins.digitalReadPin(DigitalPin.P1) == 1) {
+            if (pins.digitalReadPin(DigitalPin.P0) == 1) {
                 return true;
             } else {
                 return false;
