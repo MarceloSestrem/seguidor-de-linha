@@ -809,7 +809,7 @@ namespace Seguidor_de_Linha {
         }
     }
     //% weight=79
-    //% blockId="umsensor" block="Detecção do sensor de linha Analógica %Umsensor | Média = %m"
+    //% blockId="umasensor" block="Detecção do sensor de linha Analógica %Umsensor | Média = %m"
     //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: □ e Preto: ■)"
     //% m.min=0 m.max=1023
     export function readUma(uma: Umsensor, m: number): boolean {
@@ -835,7 +835,7 @@ namespace Seguidor_de_Linha {
         }
     }
     //% weight=79
-    //% blockId="umsensor" block="Detecção dos sensores de linha Digital %Umsensor"
+    //% blockId="umsensor" block="Detecção do sensor de linha Digital %Umsensor"
     //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: □ e Preto: ■)"
     export function readUm(um: Umsensor): boolean {
 
