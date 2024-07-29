@@ -715,8 +715,6 @@ namespace Seguidor_de_Linha {
     }
     /**
              * Leitura do sensor de linha [0-1023]
-             * @param leitura leitura to object, eg: 600
-             * @param %m %m of distance, eg: m
             */
     //% blockId="tresssensoresanalog" block="Detecção dos sensores de linha Analógica %Tressensores| Média = %m"
     //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
