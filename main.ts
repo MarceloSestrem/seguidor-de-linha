@@ -8,34 +8,34 @@ enum Sensor {
      Direito = 3
 }
 enum Umsensor {
-    //% block="□"
+    //% block="▮"
     branco = 1,
-    //% block="■"
+    //% block="▯"
    preto = 2
    }
 enum Doissensores {
-    //% block="□□"
+    //% block="▮▮"
     branco_branco = 1,
-    //% block="□■"
+    //% block="▮▯"
     branco_preto = 2,
-    //% block="■□"
+    //% block="▯▮"
     preto_branco = 3,
-    //% block="■■"
+    //% block="▯▯"
     preto_preto = 4
 }
 
 enum Tressensores {
-    //% block="□□□"
+    //% block="▮▮▮"
     branco_branco_branco = 1,
-    //% block="□■□"
+    //% block="▮▯▮"
     branco_preto_branco = 2,
-    //% block="■□□"
+    //% block="▯▮▮"
     preto_branco_branco = 3,
-    //% block="■■□"
+    //% block="▯▯▮"
     preto_preto_branco = 4,
-    //% block="□■■"
+    //% block="▮▯▯"
     branco_preto_preto = 5,
-    //% block="■■■"
+    //% block="▯▯▯"
     preto_preto_preto = 6
 }
 const enum DistanceUnit {
