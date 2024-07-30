@@ -1,5 +1,5 @@
 /*
-Robô Seguidor de linha By Marcelo
+*Robô Seguidor de linha By Marcelo Ricardo Sestrem
 */
 
 enum Sensor {
@@ -826,7 +826,7 @@ namespace Seguidor_de_Linha {
                 return false;
             }
         } else if (tresa == Tres_sensores.preto_branco_branco) {
-            if (pins.analogReadPin(AnalogPin.P0) >= m && pins.analogReadPin(AnalogPin.P1) <= m && pins.digitalReadPin(DigitalPin.P2) <= m) {
+            if (pins.analogReadPin(AnalogPin.P0) >= m && pins.analogReadPin(AnalogPin.P1) <= m && pins.analogReadPin(AnalogPin.P2) <= m) {
                 return true;
             } else {
                 return false;
@@ -853,6 +853,99 @@ namespace Seguidor_de_Linha {
             return true;
         }
     }
-   
+    /**
+          * Leitura do sensor de linha [0-1023]
+      */
+    //% blockId="doissensoresam" block="Detecção dos sensores de linha Analógica %Doissensores | M1 = %m1| M2 = %m2"
+    //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
+    //% m1.min=0 m1.max=1023
+    //% m2.min=0 m2.max=1023
+    export function readDoisam(doisa: Dois_sensores, m1: number, m2: number): boolean {
+
+        // let p1 = pins.analogReadPin(AnalogPin.P0);
+        // let p2 = pins.analogReadPin(AnalogPin.P1);
+
+        if (doisa == Dois_sensores.branco_branco) {
+            if (pins.analogReadPin(AnalogPin.P0) <= m1 && pins.analogReadPin(AnalogPin.P1) <= m2) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (doisa == Dois_sensores.branco_preto) {
+            if (pins.analogReadPin(AnalogPin.P0) <= m1 && pins.analogReadPin(AnalogPin.P1) >= m2) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (doisa == Dois_sensores.preto_branco) {
+            if (pins.analogReadPin(AnalogPin.P0) >= m1 && pins.analogReadPin(AnalogPin.P1) <= m2) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (doisa == Dois_sensores.preto_preto) {
+            if (pins.analogReadPin(AnalogPin.P0) >= m1 && pins.analogReadPin(AnalogPin.P1) >= m2) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return true;
+        }
+    }
+    /**
+             * Leitura do sensor de linha [0-1023]
+            */
+    //% blockId="tresssensoresam" block="Detecção dos sensores de linha Analógica %Tressensores| M1 = %m1| M2 = %m2| M3 = %m3"
+    //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
+    //% m1.min=0 m1.max=1023
+    //% m2.min=0 m2.max=1023
+    //% m3.min=0 m3.max=1023
+    export function readtresam(tresa: Tres_sensores, m1: number, m2: number, m3: number): boolean {
+
+        // let p1 = pins.analogReadPin(AnalogPin.P0);
+        // let p2 = pins.analogReadPin(AnalogPin.P1);
+        // let p3 = pins.analogReadPin(AnalogPin.P2);
+        if (tresa == Tres_sensores.branco_branco_branco) {
+            if (pins.analogReadPin(AnalogPin.P0) <= m1 && pins.analogReadPin(AnalogPin.P1) <= m2 && pins.analogReadPin(AnalogPin.P2) <= m3) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (tresa == Tres_sensores.branco_preto_branco) {
+            if (pins.analogReadPin(AnalogPin.P0) <= m1 && pins.analogReadPin(AnalogPin.P1) >= m2 && pins.analogReadPin(AnalogPin.P2) <= m3) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (tresa == Tres_sensores.preto_branco_branco) {
+            if (pins.analogReadPin(AnalogPin.P0) >= m1 && pins.analogReadPin(AnalogPin.P1) <= m2 && pins.analogReadPin(AnalogPin.P2) <= m3) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (tresa == Tres_sensores.preto_preto_branco) {
+            if (pins.analogReadPin(AnalogPin.P0) >= m1 && pins.analogReadPin(AnalogPin.P1) >= m2 && pins.analogReadPin(AnalogPin.P2) <= m3) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (tresa == Tres_sensores.branco_preto_preto) {
+            if (pins.analogReadPin(AnalogPin.P0) <= m1 && pins.analogReadPin(AnalogPin.P1) >= m2 && pins.analogReadPin(AnalogPin.P2) >= m3) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (tresa == Tres_sensores.preto_preto_preto) {
+            if (pins.analogReadPin(AnalogPin.P0) >= m1 && pins.analogReadPin(AnalogPin.P1) >= m2 && pins.analogReadPin(AnalogPin.P2) >= m3) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return true;
+        }
+    }
+
   
 }
