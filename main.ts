@@ -896,7 +896,7 @@ namespace Seguidor_de_Linha {
     /**
              * Leitura do sensor de linha [0-1023]
             */
-    //% blockId="tresssensoresam" block="Detecção de linha Analógica %Tressensores| M1 = %m1 M2 = %m2 M3 = %m3"
+    //% blockId="tresssensoresam" block="Detecção de linha Analógica %Tressensores| Média 1 = %m1 Média 2 = %m2 Média 3 = %m3"
     //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
     //% m1.min=0 m1.max=1023
     //% m2.min=0 m2.max=1023
