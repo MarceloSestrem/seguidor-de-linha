@@ -922,6 +922,7 @@ namespace Seguidor_de_Linha {
             return true;
         }
     }
+      //% subcategory="Extra"
     /**
              * Leitura do sensor de linha [0-1023]
             */
