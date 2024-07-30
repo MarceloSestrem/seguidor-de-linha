@@ -32,11 +32,15 @@ enum Tres_sensores {
     //% block="▯▮▮"
     preto_branco_branco = 3,
     //% block="▯▯▮"
-    preto_preto_branco = 4,
+   branco_branco_preto = 4,
+    //% block="▮▮▯"
+    preto_preto_branco = 5,
     //% block="▮▯▯"
-    branco_preto_preto = 5,
+    branco_preto_preto = 6,
+    //% block="▯▮▯"
+    preto_branco_preto = 7,
     //% block="▯▯▯"
-    preto_preto_preto = 6
+    preto_preto_preto = 8
 }
 const enum DistanceUnit {
     //% block="cm"
@@ -701,8 +705,14 @@ namespace Seguidor_de_Linha {
             } else {
                 return false;
             }
-        } else if (tres == Tres_sensores.branco_preto_branco) {
-            if (pins.digitalReadPin(DigitalPin.P0) == 0 && pins.digitalReadPin(DigitalPin.P1) == 0 && pins.digitalReadPin(DigitalPin.P2) == 0) {
+        } else if (tres == Tres_sensores.branco_branco_preto) {
+            if (pins.digitalReadPin(DigitalPin.P0) == 0 && pins.digitalReadPin(DigitalPin.P1) == 0 && pins.digitalReadPin(DigitalPin.P2) == 1) {
+                return true;
+            } else {
+                return false;
+            }
+            } else if (tres == Tres_sensores.branco_preto_branco) {
+            if (pins.digitalReadPin(DigitalPin.P0) == 0 && pins.digitalReadPin(DigitalPin.P1) == 1 && pins.digitalReadPin(DigitalPin.P2) == 0) {
                 return true;
             } else {
                 return false;
@@ -721,6 +731,12 @@ namespace Seguidor_de_Linha {
             }
         } else if (tres == Tres_sensores.branco_preto_preto) {
             if (pins.digitalReadPin(DigitalPin.P0) == 0 && pins.digitalReadPin(DigitalPin.P1) == 1 && pins.digitalReadPin(DigitalPin.P2) == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (tres == Tres_sensores.preto_branco_preto) {
+            if (pins.digitalReadPin(DigitalPin.P0) == 1 && pins.digitalReadPin(DigitalPin.P1) == 0 && pins.digitalReadPin(DigitalPin.P2) == 1) {
                 return true;
             } else {
                 return false;
@@ -819,6 +835,12 @@ namespace Seguidor_de_Linha {
             } else {
                 return false;
             }
+        } else if (tresa == Tres_sensores.branco_branco_preto) {
+            if (pins.analogReadPin(AnalogPin.P0) <= m && pins.analogReadPin(AnalogPin.P1) <= m && pins.analogReadPin(AnalogPin.P2) >= m) {
+                return true;
+            } else {
+                return false;
+            }
         } else if (tresa == Tres_sensores.branco_preto_branco) {
             if (pins.analogReadPin(AnalogPin.P0) <= m && pins.analogReadPin(AnalogPin.P1) >= m && pins.analogReadPin(AnalogPin.P2) <= m) {
                 return true;
@@ -839,6 +861,12 @@ namespace Seguidor_de_Linha {
             }
         } else if (tresa == Tres_sensores.branco_preto_preto) {
             if (pins.analogReadPin(AnalogPin.P0) <= m && pins.analogReadPin(AnalogPin.P1) >= m && pins.analogReadPin(AnalogPin.P2) >= m) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (tresa == Tres_sensores.preto_branco_preto) {
+            if (pins.analogReadPin(AnalogPin.P0) >= m && pins.analogReadPin(AnalogPin.P1) <= m && pins.analogReadPin(AnalogPin.P2) >= m) {
                 return true;
             } else {
                 return false;
@@ -912,6 +940,12 @@ namespace Seguidor_de_Linha {
             } else {
                 return false;
             }
+        } else if (tresa == Tres_sensores.branco_branco_preto) {
+            if (pins.analogReadPin(AnalogPin.P0) <= m1 && pins.analogReadPin(AnalogPin.P1) <= m2 && pins.analogReadPin(AnalogPin.P2) >= m3) {
+                return true;
+            } else {
+                return false;
+            }
         } else if (tresa == Tres_sensores.branco_preto_branco) {
             if (pins.analogReadPin(AnalogPin.P0) <= m1 && pins.analogReadPin(AnalogPin.P1) >= m2 && pins.analogReadPin(AnalogPin.P2) <= m3) {
                 return true;
@@ -932,6 +966,12 @@ namespace Seguidor_de_Linha {
             }
         } else if (tresa == Tres_sensores.branco_preto_preto) {
             if (pins.analogReadPin(AnalogPin.P0) <= m1 && pins.analogReadPin(AnalogPin.P1) >= m2 && pins.analogReadPin(AnalogPin.P2) >= m3) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (tresa == Tres_sensores.preto_branco_preto) {
+            if (pins.analogReadPin(AnalogPin.P0) >= m1 && pins.analogReadPin(AnalogPin.P1) <= m2 && pins.analogReadPin(AnalogPin.P2) >= m3) {
                 return true;
             } else {
                 return false;
