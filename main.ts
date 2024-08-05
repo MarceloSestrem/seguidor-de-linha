@@ -628,21 +628,20 @@ namespace Seguidor_de_Linha {
     /**
          * Leitura do sensor de linha [0-1]
      */
-    //% blockId="umsensor" block="Detecção do sensor de linha Digital (P0) %Umsensor"
+    //% blockId="umsensor" block="Detecção do sensor de linha Digital (p1) %Umsensor"
     //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
     export function readUm(um: Um_sensor): boolean {
 
-        // let p1 = pins.digitalReadPin(DigitalPin.P0);
-        // let p2 = pins.digitalReadPin(DigitalPin.P1);
+        // let p1 = pins.digitalReadPin(DigitalPin.P1);
 
         if (um == Um_sensor.branco) {
-            if (pins.digitalReadPin(DigitalPin.P0) == 0) {
+            if (pins.digitalReadPin(DigitalPin.P1) == 0) {
                 return true;
             } else {
                 return false;
             }
         } else if (um == Um_sensor.preto) {
-            if (pins.digitalReadPin(DigitalPin.P0) == 1) {
+            if (pins.digitalReadPin(DigitalPin.P1) == 1) {
                 return true;
             } else {
                 return false;
@@ -754,22 +753,21 @@ namespace Seguidor_de_Linha {
     /**
              * Leitura do sensor de linha [0-1023]
          */
-    //% blockId="umasensor" block="Detecção do sensor de linha Analógica (P0) %Umsensor | Média = %m"
+    //% blockId="umasensor" block="Detecção do sensor de linha Analógica (P1) %Umsensor | Média = %m"
     //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
     //% m.min=0 m.max=1023
     export function readUma(uma: Um_sensor, m: number): boolean {
 
-        // let p1 = pins.analogReadPin(AnalogPin.P0);
-        // let p2 = pins.analogReadPin(AnalogPin.P1);
+        // let p1 = pins.analogReadPin(AnalogPin.P1);
 
         if (uma == Um_sensor.branco) {
-            if (pins.analogReadPin(AnalogPin.P0) <= m) {
+            if (pins.analogReadPin(AnalogPin.P1) <= m) {
                 return true;
             } else {
                 return false;
             }
         } else if (uma == Um_sensor.preto) {
-            if (pins.analogReadPin(AnalogPin.P0) <= m) {
+            if (pins.analogReadPin(AnalogPin.P1) <= m) {
                 return true;
             } else {
                 return false;
