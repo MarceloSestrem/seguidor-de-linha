@@ -1005,7 +1005,7 @@ namespace Seguidor_de_Linha {
             return true;
         }
     }
-    //% subcategory="LEDS"
+    //% subcategory="LEDS(em construção)"
     /**
             * Acionamento do Led [1-0]
            */
