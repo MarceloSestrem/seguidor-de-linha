@@ -253,7 +253,7 @@ namespace Seguidor_de_Linha {
     /**
      * Execute one motor at the same time
      * @param motor First Motor; eg: M1A, M1B, M2A, M2B
-     * @param speed1 [-255-255] speed of motor; eg: 150, -150
+     * @param speed [-255-255] speed of motor; eg: 150, -150
     */
     
     //% blockId=robotbit_motor_run block="Motor|%index|velocidade %speed"
@@ -631,6 +631,7 @@ namespace Seguidor_de_Linha {
             return -1       
     }
     }
+    
     /**
          * Leitura do sensor de linha [0-1]
      */
