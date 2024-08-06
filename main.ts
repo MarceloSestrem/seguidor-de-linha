@@ -616,6 +616,7 @@ namespace Seguidor_de_Linha {
     }
     /**
          * Leitura do sensor de linha [0-1023]
+         * @param pin [0-1023] pin; eg: 600
         */
     //% block="Sensor Analógico de Linha |%Sensor| pino |%pin|"
     //% group="Sensores de linha"
@@ -787,6 +788,7 @@ namespace Seguidor_de_Linha {
     }
     /**
          * Leitura do sensor de linha [0-1023]
+         * @param m [0-1023] m; eg: 600
      */
     //% blockId="doissensoresa" block="Detecção dos sensores(P1 e P2) de linha Analógica %Doissensores | Média = %m"
     //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
@@ -826,6 +828,7 @@ namespace Seguidor_de_Linha {
     }
     /**
              * Leitura do sensor de linha [0-1023]
+         * @param m [0-1023] m; eg: 600
             */
     //% blockId="tresssensoresa" block="Detecção dos sensores de linha Analógica %Tressensores| Média = %m"
     //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
@@ -890,6 +893,8 @@ namespace Seguidor_de_Linha {
      //% subcategory="Extra"
     /**
           * Leitura do sensor de linha [0-1023]
+         * @param m1 [0-1023] m1; eg: 600
+         * @param m2 [0-1023] m2; eg: 600
       */
     //% blockId="doissensoresam" block="Detecção dos sensores(P1 e P2) de linha Analógica %Doissensores | Média 1 = %m1| Média 2 = %m2"
     //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
@@ -931,6 +936,9 @@ namespace Seguidor_de_Linha {
       //% subcategory="Extra"
     /**
              * Leitura do sensor de linha [0-1023]
+         * @param m1 [0-1023] m1; eg: 600
+         * @param m2 [0-1023] m2; eg: 600
+         * @param m3 [0-1023] m3; eg: 600
             */
     //% blockId="tresssensoresam" block="Detecção de linha Analógica %Tressensores| Média 1 = %m1 Média 2 = %m2 Média 3 = %m3"
     //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
@@ -994,12 +1002,5 @@ namespace Seguidor_de_Linha {
             return true;
         }
     }
-     //% blockId="Média" block="Média"
-    //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
-
-    let Média = pins.analogReadPin(AnalogPin.P0);
-    input.onButtonPressed(Button.A, function () {
-        Média = (pins.analogReadPin(AnalogPin.P0) + pins.analogReadPin(AnalogPin.P0)) / 2 + 50
-    })
-  
+     
 }
