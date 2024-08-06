@@ -986,6 +986,12 @@ namespace Seguidor_de_Linha {
             return true;
         }
     }
+     //% blockId="Média" block="Média"
+    //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
 
+    let Média = pins.analogReadPin(AnalogPin.P0);
+    input.onButtonPressed(Button.A, function () {
+        Média = (pins.analogReadPin(AnalogPin.P0) + pins.analogReadPin(AnalogPin.P0)) / 2 + 50
+    })
   
 }
