@@ -250,6 +250,12 @@ namespace Seguidor_de_Linha {
         matBuf[0] = 0x00;
         pins.i2cWriteBuffer(HT16K33_ADDRESS, matBuf);
     }
+    /**
+     * Execute one motor at the same time
+     * @param motor First Motor; eg: M1A, M1B, M2A, M2B
+     * @param speed1 [-255-255] speed of motor; eg: 150, -150
+    */
+    
     //% blockId=robotbit_motor_run block="Motor|%index|velocidade %speed"
     //% group="Motores" weight=59
     //% speed.min=-255 speed.max=255
@@ -590,7 +596,7 @@ namespace Seguidor_de_Linha {
         }
     }
     /**
-         * Leitura do sensor de linha [0-1023]
+         * Leitura do sensor de linha [0-1]
         */
     //% block="sensor Digital de Linha |%Sensor| pino |%pin|"
     //% group="Sensores de linha"
