@@ -1,7 +1,10 @@
 /*
 *Robô Seguidor de linha By Marcelo Ricardo Sestrem
 */
-
+enum Leds {
+    ON = 1,
+    OFF = 2
+}
 enum Sensor {
     Esquerdo = 1,
     Centro = 2,
@@ -1002,5 +1005,24 @@ namespace Seguidor_de_Linha {
             return true;
         }
     }
-     
+    //% subcategory="LEDS"
+    /**
+            * Acionamento do Led [1-0]
+           */
+    //% block="lED |%Sensor|  |%pins| |%Leds|"
+    //% group="Led"
+    export function led(sensor: Sensor, pin: DigitalPin): number {
+        if (sensor == Sensor.Esquerdo) {
+            return pins.digitalReadPin(pin);
+        } else if (sensor == Sensor.Centro) {
+            return pins.digitalReadPin(pin)
+        }
+        else if (sensor == Sensor.Direito) {
+            return pins.digitalReadPin(pin)
+        } else {
+            return -1
+        }
+
+
+    }
 }
