@@ -759,7 +759,8 @@ namespace Seguidor_de_Linha {
     }
     /**
              * Leitura do sensor de linha [0-1023]
-         */
+          * @param m [0-1023] m; eg: 600
+    */
     //% blockId="umasensor" block="Detecção do sensor de linha Analógica (P1) %Umsensor | Média = %m"
     //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
     //% m.min=0 m.max=1023
