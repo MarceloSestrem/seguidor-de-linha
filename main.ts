@@ -1049,10 +1049,10 @@ namespace Seguidor_de_Linha {
     //% group="Led"
     //% weight=80
     export function piscaled(sensor: Sensor, pin: DigitalPin, delay: number): void {
-                return pins.digitalWritePin(pin, 1);
+            pins.digitalWritePin(pin, 1);
             basic.pause(delay * 1000);
             return pins.digitalWritePin(pin, 0);
-        basic.pause(delay * 1000);
-         
+         basic.pause(delay * 1000);
+           
     }
 }
