@@ -1009,7 +1009,7 @@ namespace Seguidor_de_Linha {
     /**
             * Acionamento do Led [1-0]
            */
-    //% block="lED |%Sensor|  |%pins|  |%Leds|"
+    //% block="LED |%Sensor|  |%pins|  |%Leds|"
     //% group="Led"
     export function led(sensor: Sensor, pin: DigitalPin, led: Leds): number {
         if (led == Leds.ON) {
@@ -1028,14 +1028,14 @@ namespace Seguidor_de_Linha {
       * @param led led pin selection enumeration, eg:DigitalPin.P12
             * Acionamento do Led [1-0]
            */
-    //% block="lED |%Sensor|  |%pins|  |%Leds|"
+    //% block="LED |%Sensor|  |%pins|  |%Leds|"
     //% group="Led"
     //% weight=80
     export function led1(sensor: Sensor, pin: DigitalPin, led: Leds): void {
         if (led == Leds.ON) {
-         return   pins.digitalWritePin(DigitalPin.P0, 1);
+         return   pins.digitalWritePin(pin, 1);
         } else if (led == Leds.OFF) {
-          return  pins.digitalWritePin(DigitalPin.P0, 0);
+          return  pins.digitalWritePin(pin, 0);
         }
 
     }
