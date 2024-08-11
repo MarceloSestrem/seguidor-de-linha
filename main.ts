@@ -1051,7 +1051,7 @@ namespace Seguidor_de_Linha {
     export function piscaled(sensor: Sensor, pin: DigitalPin, delay: number): void {
             pins.digitalWritePin(pin, 1);
             basic.pause(delay * 1000);
-            return pins.digitalWritePin(pin, 0);
+            pins.digitalWritePin(pin, 0);
          basic.pause(delay * 1000);
            
     }
