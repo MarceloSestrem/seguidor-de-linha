@@ -1033,9 +1033,9 @@ namespace Seguidor_de_Linha {
     //% weight=80
     export function led1(sensor: Sensor, pin: DigitalPin, led: Leds): void {
         if (led == Leds.ON) {
-            pins.digitalWritePin(DigitalPin.P0, 1);
+         return   pins.digitalWritePin(DigitalPin.P0, 1);
         } else if (led == Leds.OFF) {
-            pins.digitalWritePin(DigitalPin.P0, 0);
+          return  pins.digitalWritePin(DigitalPin.P0, 0);
         }
 
     }
