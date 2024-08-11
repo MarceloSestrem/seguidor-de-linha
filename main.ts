@@ -1011,6 +1011,13 @@ namespace Seguidor_de_Linha {
            */
     //% block="lED |%Sensor|  |%pins|  |%Leds|"
     //% group="Led"
+    //% trig.fieldEditor="gridpicker"
+    //% trig.fieldOptions.columns=4
+    //% trig.fieldOptions.tooltips="false"
+    //% echo.fieldEditor="gridpicker"
+    //% echo.fieldOptions.columns=4
+    //% echo.fieldOptions.tooltips="false"
+    //% weight=80
     export function led(sensor: Sensor, pin: DigitalPin, led: Leds): number {
         if (led == Leds.ON) {
             return pins.digitalReadPin(1);
