@@ -1009,17 +1009,15 @@ namespace Seguidor_de_Linha {
     /**
             * Acionamento do Led [1-0]
            */
-    //% block="lED |%Sensor|  |%pins| |%Leds|"
+    //% block="lED |%Sensor|  |%pins|  |%Leds|"
     //% group="Led"
-    export function led(sensor: Sensor, pin: DigitalPin): number {
-        if (sensor == Sensor.Esquerdo) {
-            return pins.digitalReadPin(pin);
-        } else if (sensor == Sensor.Centro) {
-            return pins.digitalReadPin(pin)
+    export function led(sensor: Sensor, pin: DigitalPin, led: Leds): number {
+        if (led == Leds.ON) {
+            return pins.digitalReadPin(1);
+        } else if (led == Leds.OFF) {
+            return pins.digitalReadPin(0)
         }
-        else if (sensor == Sensor.Direito) {
-            return pins.digitalReadPin(pin)
-        } else {
+        else {
             return -1
         }
 
