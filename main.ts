@@ -1011,13 +1011,16 @@ namespace Seguidor_de_Linha {
            */
     //% block="lED |%Sensor|  |%pins|  |%Leds|"
     //% group="Led"
-    //% weight=80
-    export function led(sensor: Sensor, pin: DigitalPin, led: Leds): void {
+    export function led(sensor: Sensor, pin: DigitalPin, led: Leds): number {
         if (led == Leds.ON) {
-             pins.digitalReadPin(DigitalPin.P1) == 1;
+            return pins.digitalReadPin(1);
         } else if (led == Leds.OFF) {
-            pins.digitalReadPin(DigitalPin.P1) == 0;
+            return pins.digitalReadPin(0)
         }
-       
+        else {
+            return -1
+        }
+
+
     }
 }
