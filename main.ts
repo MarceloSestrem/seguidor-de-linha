@@ -1025,6 +1025,7 @@ namespace Seguidor_de_Linha {
     }
     //% subcategory="LEDS(em construção)"
     /**
+      * @param led led pin selection enumeration, eg:DigitalPin.P12
             * Acionamento do Led [1-0]
            */
     //% block="lED |%Sensor|  |%pins|  |%Leds|"
@@ -1032,9 +1033,9 @@ namespace Seguidor_de_Linha {
     //% weight=80
     export function led1(sensor: Sensor, pin: DigitalPin, led: Leds): void {
         if (led == Leds.ON) {
-            pins.digitalReadPin(DigitalPin.P1) == 1;
+            pins.digitalWritePin(pin, 1);
         } else if (led == Leds.OFF) {
-            pins.digitalReadPin(DigitalPin.P1) == 0;
+            pins.digitalWritePin(pin, 0);
         }
 
     }
