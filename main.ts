@@ -1023,4 +1023,19 @@ namespace Seguidor_de_Linha {
 
 
     }
+    //% subcategory="LEDS(em construção)"
+    /**
+            * Acionamento do Led [1-0]
+           */
+    //% block="lED |%Sensor|  |%pins|  |%Leds|"
+    //% group="Led"
+    //% weight=80
+    export function led1(sensor: Sensor, pin: DigitalPin, led: Leds): void {
+        if (led == Leds.ON) {
+            pins.digitalReadPin(DigitalPin.P1) == 1;
+        } else if (led == Leds.OFF) {
+            pins.digitalReadPin(DigitalPin.P1) == 0;
+        }
+
+    }
 }
