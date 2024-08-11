@@ -1005,7 +1005,7 @@ namespace Seguidor_de_Linha {
             return true;
         }
     }
-    //% subcategory="LEDS"
+    //% subcategory="LEDS" icon="\uf1b9"
     /*
     /**
             * Acionamento do Led [1-0]
@@ -1024,7 +1024,7 @@ namespace Seguidor_de_Linha {
 
 
     }
-    //% subcategory="LEDS"
+    //% subcategory="LEDS" icon="\uf1b9"
     /*
     /**
       * @param led led pin selection enumeration, eg:DigitalPin.P12
@@ -1041,7 +1041,7 @@ namespace Seguidor_de_Linha {
         }
 
     }
-    //% subcategory="LEDS"
+    //% subcategory="LEDS" icon="\uf1b9"
     /*
     /**
       * @param led led pin selection enumeration, eg:DigitalPin.P1
