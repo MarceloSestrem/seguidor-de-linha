@@ -1005,7 +1005,8 @@ namespace Seguidor_de_Linha {
             return true;
         }
     }
-    //% subcategory="LEDS(em construção)"
+    //% subcategory="LEDS"
+    /*
     /**
             * Acionamento do Led [1-0]
            */
@@ -1023,7 +1024,8 @@ namespace Seguidor_de_Linha {
 
 
     }
-    //% subcategory="LEDS(em construção)"
+    //% subcategory="LEDS"
+    /*
     /**
       * @param led led pin selection enumeration, eg:DigitalPin.P12
             * Acionamento do Led [1-0]
@@ -1039,7 +1041,8 @@ namespace Seguidor_de_Linha {
         }
 
     }
-    //% subcategory="LEDS(em construção)"
+    //% subcategory="LEDS"
+    /*
     /**
       * @param led led pin selection enumeration, eg:DigitalPin.P1
       * @param delay seconde delay to stop; eg: 1
