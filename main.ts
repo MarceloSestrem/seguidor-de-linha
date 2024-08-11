@@ -1039,4 +1039,20 @@ namespace Seguidor_de_Linha {
         }
 
     }
+    //% subcategory="LEDS(em construção)"
+    /**
+      * @param led led pin selection enumeration, eg:DigitalPin.P1
+      * @param delay seconde delay to stop; eg: 1
+            * Acionamento do Led [1-0]
+           */
+    //% block="PISCA LED |%Sensor|  |%pins|  espera %delay|s"
+    //% group="Led"
+    //% weight=80
+    export function piscaled(sensor: Sensor, pin: DigitalPin, delay: number): void {
+                return pins.digitalWritePin(pin, 1);
+            basic.pause(delay * 1000);
+            return pins.digitalWritePin(pin, 0);
+        basic.pause(delay * 1000);
+         
+    }
 }
