@@ -1012,14 +1012,16 @@ namespace Seguidor_de_Linha {
            */
     //% block="LED |%Sensor|  |%pins|  |%Leds|"
     //% group="Led"
-    export function led(sensor: Sensor, pin: DigitalPin, led: Leds): number {
+    export function led(sensor: Sensor, pin: DigitalPin, led: Leds): boolean {
         if (led == Leds.ON) {
-            return pins.digitalReadPin(1);
+        pins.digitalWritePin(pin, 1);
+            return true;
         } else if (led == Leds.OFF) {
-            return pins.digitalReadPin(0)
+        pins.digitalWritePin(pin, 0);
+            return true;
         }
         else {
-            return -1
+            return true;
         }
 
 
