@@ -312,8 +312,8 @@ namespace Seguidor_de_Linha {
     * @param speed2 [-255-255] speed of motor; eg: 150, -150
     * @param delay seconde delay to stop; eg: 1
    */
-    //% blockId=robotbit_motor_dual block="Motores|%motor1|velocidade %speed1|%motor2|velocidade %speed2|espera %delay|s"
-    //% group="Motores" weight=57
+    //% blockId=robotbit_motor_dual block="Motores|%motor1|velocidade %speed1|%motor2|velocidade %speed2 espera %delay|s"
+    //% group="Motores" weight=59
     //% speed1.min=-255 speed1.max=255
     //% speed2.min=-255 speed2.max=255
     
