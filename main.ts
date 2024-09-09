@@ -312,7 +312,7 @@ namespace Seguidor_de_Linha {
     * @param speed2 [-255-255] speed of motor; eg: 150, -150
     * @param delay seconde delay to stop; eg: 1
    */
-    //% blockId=robotbit_motor_dual_DELAY = motores com delay |%motor1|velocidade %speed1|%motor2|velocidade %speed2 | espera(em Seg.) |%delay "
+    //% blockId=robotbit_motor_dual_DELAY="motores com delay |%motor1|velocidade %speed1|%motor2|velocidade %speed2 | espera(em Seg.) |%delay "
     //% group="Motores" weight=58
     //% speed1.min=-255 speed1.max=255
     //% speed2.min=-255 speed2.max=255
@@ -660,7 +660,7 @@ namespace Seguidor_de_Linha {
     /**
          * Leitura do sensor de linha [0-1]
      */
-    //% blockId="umsensor" block="Detecção do sensor de linha Digital (p1) %Umsensor"
+    //% blockId="umsensor" block="Detecção do sensor de linha Digital (p1) |%Umsensor"
     //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
     export function readUm(um: Um_sensor): boolean {
 
@@ -685,7 +685,7 @@ namespace Seguidor_de_Linha {
     /**
        * Leitura do sensor de linha [0-1]
       */
-    //% blockId="doissensores" block="Detecção dos sensores(P1 e P2) de linha Digital %Doissensores"
+    //% blockId="doissensores" block="Detecção dos sensores(P1 e P2) de linha Digital |%Doissensores"
     //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
     export function readDois(dois: Dois_sensores): boolean {
 
@@ -723,7 +723,7 @@ namespace Seguidor_de_Linha {
     /**
          * Leitura do sensor de linha [0-1]
         */
-    //% blockId="tresssensores" block="Detecção dos sensores de linha Digital %Tressensores"
+    //% blockId="tresssensores" block="Detecção dos sensores de linha Digital |%Tressensores"
 //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
     export function readtres(tres: Tres_sensores): boolean {
 
@@ -786,7 +786,7 @@ namespace Seguidor_de_Linha {
              * Leitura do sensor de linha [0-1023]
           * @param m [0-1023] m; eg: 600
     */
-    //% blockId="umasensor" block="Detecção do sensor de linha Analógica (P1) %Umsensor | Média = %m"
+    //% blockId="umasensor" block="Detecção do sensor de linha Analógica (P1) |%Umsensor | Média = %m"
     //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
     //% m.min=0 m.max=1023
     export function readUma(uma: Um_sensor, m: number): boolean {
@@ -814,7 +814,7 @@ namespace Seguidor_de_Linha {
          * Leitura do sensor de linha [0-1023]
          * @param m [0-1023] m; eg: 600
      */
-    //% blockId="doissensoresa" block="Detecção dos sensores(P1 e P2) de linha Analógica %Doissensores | Média = %m"
+    //% blockId="doissensoresa" block="Detecção dos sensores(P1 e P2) de linha Analógica |%Doissensores | Média = %m"
     //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
     //% m.min=0 m.max=1023
     export function readDoisa(doisa: Dois_sensores, m: number): boolean {
@@ -854,7 +854,7 @@ namespace Seguidor_de_Linha {
              * Leitura do sensor de linha [0-1023]
          * @param m [0-1023] m; eg: 600
             */
-    //% blockId="tresssensoresa" block="Detecção dos sensores de linha Analógica %Tressensores| Média = %m"
+    //% blockId="tresssensoresa" block="Detecção dos sensores de linha Analógica |%Tressensores| Média = %m"
     //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
     //% m.min=0 m.max=1023
     export function readtresa(tresa: Tres_sensores, m: number): boolean {
@@ -920,7 +920,7 @@ namespace Seguidor_de_Linha {
          * @param m1 [0-1023] m1; eg: 600
          * @param m2 [0-1023] m2; eg: 600
       */
-    //% blockId="doissensoresam" block="Detecção dos sensores(P1 e P2) de linha Analógica %Doissensores | Média 1 = %m1| Média 2 = %m2"
+    //% blockId="doissensoresam" block="Detecção dos sensores(P1 e P2) de linha Analógica |%Doissensores | Média 1 = %m1| Média 2 = %m2"
     //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
     //% m1.min=0 m1.max=1023
     //% m2.min=0 m2.max=1023
@@ -964,7 +964,7 @@ namespace Seguidor_de_Linha {
          * @param m2 [0-1023] m2; eg: 600
          * @param m3 [0-1023] m3; eg: 600
             */
-    //% blockId="tresssensoresam" block="Detecção de linha Analógica %Tressensores| Média 1 = %m1 Média 2 = %m2 Média 3 = %m3"
+    //% blockId="tresssensoresam" block="Detecção de linha Analógica |%Tressensores| Média 1 = %m1 Média 2 = %m2 Média 3 = %m3"
     //% group="Sensores de linha V.2( pinos: P0,  P1 e ou  P2 Cores: Branco: ▮ e Preto: ▯)"
     //% m1.min=0 m1.max=1023
     //% m2.min=0 m2.max=1023
