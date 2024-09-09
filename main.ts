@@ -312,12 +312,11 @@ namespace Seguidor_de_Linha {
     * @param speed2 [-255-255] speed of motor; eg: 150, -150
     * @param delay seconde delay to stop; eg: 1
    */
-    //% blockId=robotbit_motor_dual_DELAY block="Motores com delay |%motor1|velocidade %speed1|%motor2|velocidade %speed2 espera %delay|s"
+    //% blockId=robotbit_motor_dual_DELAY block="Motores com delay |%motor1|velocidade %speed1|%motor2|velocidade %speed2 espera %delay segundos"
     //% group="Motores" weight=58
     //% speed1.min=-255 speed1.max=255
     //% speed2.min=-255 speed2.max=255
-    
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
+        //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
     export function MotorRunDualDELAY(motor1: Motors, speed1: number, motor2: Motors, speed2: number, delay: number): void {
         MotorRun(motor1, speed1);
         MotorRun(motor2, speed2);
@@ -794,13 +793,13 @@ namespace Seguidor_de_Linha {
         // let p1 = pins.analogReadPin(AnalogPin.P1);
 
         if (uma == Um_sensor.branco) {
-            if (pins.analogReadPin(AnalogPin.P1) <= m) {
+            if (pins.analogReadPin(AnalogPin.P1) < m) {
                 return true;
             } else {
                 return false;
             }
         } else if (uma == Um_sensor.preto) {
-            if (pins.analogReadPin(AnalogPin.P1) <= m) {
+            if (pins.analogReadPin(AnalogPin.P1) < m) {
                 return true;
             } else {
                 return false;
@@ -823,25 +822,25 @@ namespace Seguidor_de_Linha {
         // let p2 = pins.analogReadPin(AnalogPin.P2);
 
         if (doisa == Dois_sensores.branco_branco) {
-            if (pins.analogReadPin(AnalogPin.P1) <= m && pins.analogReadPin(AnalogPin.P2) <= m) {
+            if (pins.analogReadPin(AnalogPin.P1) < m && pins.analogReadPin(AnalogPin.P2) < m) {
                 return true;
             } else {
                 return false;
             }
         } else if (doisa == Dois_sensores.branco_preto) {
-            if (pins.analogReadPin(AnalogPin.P1) <= m && pins.analogReadPin(AnalogPin.P2) >= m) {
+            if (pins.analogReadPin(AnalogPin.P1) < m && pins.analogReadPin(AnalogPin.P2) > m) {
                 return true;
             } else {
                 return false;
             }
         } else if (doisa == Dois_sensores.preto_branco) {
-            if (pins.analogReadPin(AnalogPin.P1) >= m && pins.analogReadPin(AnalogPin.P2) <= m) {
+            if (pins.analogReadPin(AnalogPin.P1) > m && pins.analogReadPin(AnalogPin.P2) < m) {
                 return true;
             } else {
                 return false;
             }
         } else if (doisa == Dois_sensores.preto_preto) {
-            if (pins.analogReadPin(AnalogPin.P1) >= m && pins.analogReadPin(AnalogPin.P2) >= m) {
+            if (pins.analogReadPin(AnalogPin.P1) > m && pins.analogReadPin(AnalogPin.P2) > m) {
                 return true;
             } else {
                 return false;
@@ -863,49 +862,49 @@ namespace Seguidor_de_Linha {
         // let p2 = pins.analogReadPin(AnalogPin.P1);
         // let p3 = pins.analogReadPin(AnalogPin.P2);
         if (tresa == Tres_sensores.branco_branco_branco) {
-            if (pins.analogReadPin(AnalogPin.P0) <= m && pins.analogReadPin(AnalogPin.P1) <= m && pins.analogReadPin(AnalogPin.P2) <= m) {
+            if (pins.analogReadPin(AnalogPin.P0) < m && pins.analogReadPin(AnalogPin.P1) < m && pins.analogReadPin(AnalogPin.P2) <= m) {
                 return true;
             } else {
                 return false;
             }
         } else if (tresa == Tres_sensores.branco_branco_preto) {
-            if (pins.analogReadPin(AnalogPin.P0) <= m && pins.analogReadPin(AnalogPin.P1) <= m && pins.analogReadPin(AnalogPin.P2) >= m) {
+            if (pins.analogReadPin(AnalogPin.P0) < m && pins.analogReadPin(AnalogPin.P1) < m && pins.analogReadPin(AnalogPin.P2) > m) {
                 return true;
             } else {
                 return false;
             }
         } else if (tresa == Tres_sensores.branco_preto_branco) {
-            if (pins.analogReadPin(AnalogPin.P0) <= m && pins.analogReadPin(AnalogPin.P1) >= m && pins.analogReadPin(AnalogPin.P2) <= m) {
+            if (pins.analogReadPin(AnalogPin.P0) < m && pins.analogReadPin(AnalogPin.P1) > m && pins.analogReadPin(AnalogPin.P2) < m) {
                 return true;
             } else {
                 return false;
             }
         } else if (tresa == Tres_sensores.preto_branco_branco) {
-            if (pins.analogReadPin(AnalogPin.P0) >= m && pins.analogReadPin(AnalogPin.P1) <= m && pins.analogReadPin(AnalogPin.P2) <= m) {
+            if (pins.analogReadPin(AnalogPin.P0) >= m && pins.analogReadPin(AnalogPin.P1) < m && pins.analogReadPin(AnalogPin.P2) < m) {
                 return true;
             } else {
                 return false;
             }
         } else if (tresa == Tres_sensores.preto_preto_branco) {
-            if (pins.analogReadPin(AnalogPin.P0) >= m && pins.analogReadPin(AnalogPin.P1) >= m && pins.analogReadPin(AnalogPin.P2) <= m) {
+            if (pins.analogReadPin(AnalogPin.P0) > m && pins.analogReadPin(AnalogPin.P1) >= m && pins.analogReadPin(AnalogPin.P2) < m) {
                 return true;
             } else {
                 return false;
             }
         } else if (tresa == Tres_sensores.branco_preto_preto) {
-            if (pins.analogReadPin(AnalogPin.P0) <= m && pins.analogReadPin(AnalogPin.P1) >= m && pins.analogReadPin(AnalogPin.P2) >= m) {
+            if (pins.analogReadPin(AnalogPin.P0) < m && pins.analogReadPin(AnalogPin.P1) > m && pins.analogReadPin(AnalogPin.P2) > m) {
                 return true;
             } else {
                 return false;
             }
         } else if (tresa == Tres_sensores.preto_branco_preto) {
-            if (pins.analogReadPin(AnalogPin.P0) >= m && pins.analogReadPin(AnalogPin.P1) <= m && pins.analogReadPin(AnalogPin.P2) >= m) {
+            if (pins.analogReadPin(AnalogPin.P0) > m && pins.analogReadPin(AnalogPin.P1) < m && pins.analogReadPin(AnalogPin.P2) > m) {
                 return true;
             } else {
                 return false;
             }
         } else if (tresa == Tres_sensores.preto_preto_preto) {
-            if (pins.analogReadPin(AnalogPin.P0) >= m && pins.analogReadPin(AnalogPin.P1) >= m && pins.analogReadPin(AnalogPin.P2) >= m) {
+            if (pins.analogReadPin(AnalogPin.P0) > m && pins.analogReadPin(AnalogPin.P1) > m && pins.analogReadPin(AnalogPin.P2) > m) {
                 return true;
             } else {
                 return false;
@@ -930,25 +929,25 @@ namespace Seguidor_de_Linha {
         // let p2 = pins.analogReadPin(AnalogPin.P2);
 
         if (doisa == Dois_sensores.branco_branco) {
-            if (pins.analogReadPin(AnalogPin.P1) <= m1 && pins.analogReadPin(AnalogPin.P2) <= m2) {
+            if (pins.analogReadPin(AnalogPin.P1) < m1 && pins.analogReadPin(AnalogPin.P2) < m2) {
                 return true;
             } else {
                 return false;
             }
         } else if (doisa == Dois_sensores.branco_preto) {
-            if (pins.analogReadPin(AnalogPin.P1) <= m1 && pins.analogReadPin(AnalogPin.P2) >= m2) {
+            if (pins.analogReadPin(AnalogPin.P1) < m1 && pins.analogReadPin(AnalogPin.P2) > m2) {
                 return true;
             } else {
                 return false;
             }
         } else if (doisa == Dois_sensores.preto_branco) {
-            if (pins.analogReadPin(AnalogPin.P1) >= m1 && pins.analogReadPin(AnalogPin.P2) <= m2) {
+            if (pins.analogReadPin(AnalogPin.P1) > m1 && pins.analogReadPin(AnalogPin.P2) < m2) {
                 return true;
             } else {
                 return false;
             }
         } else if (doisa == Dois_sensores.preto_preto) {
-            if (pins.analogReadPin(AnalogPin.P1) >= m1 && pins.analogReadPin(AnalogPin.P2) >= m2) {
+            if (pins.analogReadPin(AnalogPin.P1) > m1 && pins.analogReadPin(AnalogPin.P2) > m2) {
                 return true;
             } else {
                 return false;
@@ -975,49 +974,49 @@ namespace Seguidor_de_Linha {
         // let p2 = pins.analogReadPin(AnalogPin.P1);
         // let p3 = pins.analogReadPin(AnalogPin.P2);
         if (tresa == Tres_sensores.branco_branco_branco) {
-            if (pins.analogReadPin(AnalogPin.P0) <= m1 && pins.analogReadPin(AnalogPin.P1) <= m2 && pins.analogReadPin(AnalogPin.P2) <= m3) {
+            if (pins.analogReadPin(AnalogPin.P0) < m1 && pins.analogReadPin(AnalogPin.P1) < m2 && pins.analogReadPin(AnalogPin.P2) < m3) {
                 return true;
             } else {
                 return false;
             }
         } else if (tresa == Tres_sensores.branco_branco_preto) {
-            if (pins.analogReadPin(AnalogPin.P0) <= m1 && pins.analogReadPin(AnalogPin.P1) <= m2 && pins.analogReadPin(AnalogPin.P2) >= m3) {
+            if (pins.analogReadPin(AnalogPin.P0) < m1 && pins.analogReadPin(AnalogPin.P1) < m2 && pins.analogReadPin(AnalogPin.P2) > m3) {
                 return true;
             } else {
                 return false;
             }
         } else if (tresa == Tres_sensores.branco_preto_branco) {
-            if (pins.analogReadPin(AnalogPin.P0) <= m1 && pins.analogReadPin(AnalogPin.P1) >= m2 && pins.analogReadPin(AnalogPin.P2) <= m3) {
+            if (pins.analogReadPin(AnalogPin.P0) < m1 && pins.analogReadPin(AnalogPin.P1) > m2 && pins.analogReadPin(AnalogPin.P2) < m3) {
                 return true;
             } else {
                 return false;
             }
         } else if (tresa == Tres_sensores.preto_branco_branco) {
-            if (pins.analogReadPin(AnalogPin.P0) >= m1 && pins.analogReadPin(AnalogPin.P1) <= m2 && pins.analogReadPin(AnalogPin.P2) <= m3) {
+            if (pins.analogReadPin(AnalogPin.P0) > m1 && pins.analogReadPin(AnalogPin.P1) < m2 && pins.analogReadPin(AnalogPin.P2) < m3) {
                 return true;
             } else {
                 return false;
             }
         } else if (tresa == Tres_sensores.preto_preto_branco) {
-            if (pins.analogReadPin(AnalogPin.P0) >= m1 && pins.analogReadPin(AnalogPin.P1) >= m2 && pins.analogReadPin(AnalogPin.P2) <= m3) {
+            if (pins.analogReadPin(AnalogPin.P0) > m1 && pins.analogReadPin(AnalogPin.P1) > m2 && pins.analogReadPin(AnalogPin.P2) < m3) {
                 return true;
             } else {
                 return false;
             }
         } else if (tresa == Tres_sensores.branco_preto_preto) {
-            if (pins.analogReadPin(AnalogPin.P0) <= m1 && pins.analogReadPin(AnalogPin.P1) >= m2 && pins.analogReadPin(AnalogPin.P2) >= m3) {
+            if (pins.analogReadPin(AnalogPin.P0) < m1 && pins.analogReadPin(AnalogPin.P1) > m2 && pins.analogReadPin(AnalogPin.P2) > m3) {
                 return true;
             } else {
                 return false;
             }
         } else if (tresa == Tres_sensores.preto_branco_preto) {
-            if (pins.analogReadPin(AnalogPin.P0) >= m1 && pins.analogReadPin(AnalogPin.P1) <= m2 && pins.analogReadPin(AnalogPin.P2) >= m3) {
+            if (pins.analogReadPin(AnalogPin.P0) > m1 && pins.analogReadPin(AnalogPin.P1) < m2 && pins.analogReadPin(AnalogPin.P2) > m3) {
                 return true;
             } else {
                 return false;
             }
         } else if (tresa == Tres_sensores.preto_preto_preto) {
-            if (pins.analogReadPin(AnalogPin.P0) >= m1 && pins.analogReadPin(AnalogPin.P1) >= m2 && pins.analogReadPin(AnalogPin.P2) >= m3) {
+            if (pins.analogReadPin(AnalogPin.P0) > m1 && pins.analogReadPin(AnalogPin.P1) > m2 && pins.analogReadPin(AnalogPin.P2) > m3) {
                 return true;
             } else {
                 return false;
@@ -1071,7 +1070,7 @@ namespace Seguidor_de_Linha {
       * @param delay seconde delay to stop; eg: 1
             * Acionamento do Led [1-0]
            */
-    //% block="PISCA LED |%Sensor|  |%pins|  espera %delay|s"
+    //% block="PISCA LED |%Sensor|  |%pins|  espera %delay|seg."
     //% group="Led"
     //% weight=80
     export function piscaled(sensor: Sensor, pin: DigitalPin, delay: number): void {
