@@ -1,6 +1,6 @@
 {
     "name": "Seguidor de Linha",
-    "version": "1.0.18",
+    "version": "1.0.7",
     "description": "",
     "dependencies": {
         "core": "*",
@@ -16,7 +16,7 @@
         "test.ts"
     ],
     "targetVersions": {
-        "target": "7.0.40",
+        "target": "6.0.28",
         "targetId": "microbit"
     },
     "supportedTargets": [
