@@ -259,7 +259,7 @@ namespace Seguidor_de_Linha {
      * @param speed [-255-255] speed of motor; eg: 150, -150
     */
     
-    //% blockId=robotbit_motor_run block="Motor|%index|velocidade %speed"
+    //% blockId=robotbit_motor_run block="Motor|%index|velocidade    %speed   "
     //% group="Motores" weight=59
     //% speed.min=-255 speed.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
@@ -305,19 +305,18 @@ namespace Seguidor_de_Linha {
         MotorRun(motor2, speed2);
     }
     /**
-    * Execute two motors at the same time
+    * Execute dois motores at com atraso
     * @param motor1 First Motor; eg: M1A, M1B
     * @param speed1 [-255-255] speed of motor; eg: 150, -150
     * @param motor2 Second Motor; eg: M2A, M2B
     * @param speed2 [-255-255] speed of motor; eg: 150, -150
     * @param delay seconde delay to stop; eg: 1
    */
-    //% blockId=robotbit_motor_dual_DELAY="motores com delay |%motor1|velocidade %speed1|%motor2|velocidade %speed2 | espera(em Seg.) |%delay "
-    //% group="Motores" weight=58
+    //% blockId=robotbit_motor_dual_DELAY="motores com delay |%motor1|velocidade %speed1|%motor2|velocidade %speed2 | espera(em Seg.) %delay "
+    //% group="Motores" weight=70
     //% speed1.min=-255 speed1.max=255
     //% speed2.min=-255 speed2.max=255
-    
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
+        //% name.fieldEditor="gridpicker" name.fieldOptions.columns= 5
     export function MotorRunDualDELAY(motor1: Motors, speed1: number, motor2: Motors, speed2: number, delay: number): void {
         MotorRun(motor1, speed1);
         MotorRun(motor2, speed2);
@@ -331,7 +330,7 @@ namespace Seguidor_de_Linha {
      * @param speed [-255-255] speed of motor; eg: 150, -150
      * @param delay seconde delay to stop; eg: 1
     */
-    //% blockId=robotbit_motor_rundelay block="Motor|%index|velocidade %speed|espera %delay|s"
+    //% blockId=robotbit_motor_rundelay block="Motor|%index|velocidade %speed|espera %delay|seg."
     //% group="Motores" weight=57
     //% speed.min=-255 speed.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
