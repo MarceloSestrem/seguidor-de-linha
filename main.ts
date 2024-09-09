@@ -313,7 +313,7 @@ namespace Seguidor_de_Linha {
     * @param delay seconde delay to stop; eg: 1
    */
     //% blockId=robotbit_motor_dual_DELAY block="Motores com delay |%motor1|velocidade %speed1|%motor2|velocidade %speed2 espera %delay segundos"
-    //% group="Motores" weight=58
+    //% group="Motores" 
     //% speed1.min=-255 speed1.max=255
     //% speed2.min=-255 speed2.max=255
         //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
