@@ -306,9 +306,9 @@ namespace Seguidor_de_Linha {
     }
     /**
     * Execute two motors at the same time
-    * @param motor First Motor1; eg: M1A, M1B
+    * @param motors First Motor1; eg: M1A, M1B
     * @param speed1 [-255-255] speed of motor; eg: 150, -150
-    * @param motor Second Motor2; eg: M2A, M2B
+    * @param motors Second Motor2; eg: M2A, M2B
     * @param speed2 [-255-255] speed of motor; eg: 150, -150
     * @param delay seconde delay to stop; eg: 1
    */
