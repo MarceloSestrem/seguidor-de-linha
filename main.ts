@@ -300,7 +300,7 @@ namespace Seguidor_de_Linha {
     //% speed1.min=-255 speed1.max=255
     //% speed2.min=-255 speed2.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function MotorRunDual(motor1: Motors, speed1: number, motor2: Motors, speed2: number): void {
+    export function MotorRunDual(motor1: Motors, speed1: number, motor2: Motors.M2A, speed2: number): void {
         MotorRun(motor1, speed1);
         MotorRun(motor2, speed2);
     }
@@ -317,7 +317,7 @@ namespace Seguidor_de_Linha {
     //% speed1.min=-255 speed1.max=255
     //% speed2.min=-255 speed2.max=255
         //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
-    export function MotorRunDualDELAY(motor1: Motors, speed1: number, motor2: Motors, speed2: number, delay: number): void {
+    export function MotorRunDualDELAY(motor1: Motors, speed1: number, motor2: Motors.M2A, speed2: number, delay: number): void {
         MotorRun(motor1, speed1);
         MotorRun(motor2, speed2);
         basic.pause(delay * 1000);
