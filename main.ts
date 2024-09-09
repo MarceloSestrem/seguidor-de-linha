@@ -290,9 +290,9 @@ namespace Seguidor_de_Linha {
 
     /**
      * Execute two motors at the same time
-     * @param motor1 First Motor; eg: M1A, M1B
+     * @param motor1 First Motor1; eg: M1A, M1B
      * @param speed1 [-255-255] speed of motor; eg: 150, -150
-     * @param motor2 Second Motor; eg: M2A, M2B
+     * @param motor2 Second Motor2; eg: M2A, M2B
      * @param speed2 [-255-255] speed of motor; eg: 150, -150
     */
     //% blockId=robotbit_motor_dual block="Motores|%motor1|velocidade %speed1|%motor2|velocidade %speed2"
