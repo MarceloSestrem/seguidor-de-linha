@@ -319,7 +319,7 @@ namespace Seguidor_de_Linha {
         //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
     export function MotorRunDualDELAY(motor1: Motors, speed1: number, motor2: Motors, speed2: number, delay: number): void {
         MotorRun(motor1, speed1);
-        MotorRun(Motors.M2A, speed2);
+        MotorRun(motor2, speed2);
         basic.pause(delay * 1000);
         MotorRun(motor1, 0);
         MotorRun(motor2, 0);
