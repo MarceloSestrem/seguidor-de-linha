@@ -313,7 +313,7 @@ namespace Seguidor_de_Linha {
     * @param delay seconde delay to stop; eg: 1
    */
     //% blockId=robotbit_motor_dual_DELAY="motores com delay |%motor1|velocidade %speed1|%motor2|velocidade %speed2 | espera(em Seg.) %delay "
-    //% group="Motores" weight=70
+    //% group="Motores" weight=57
     //% speed1.min=-255 speed1.max=255
     //% speed2.min=-255 speed2.max=255
         //% name.fieldEditor="gridpicker" name.fieldOptions.columns= 5
@@ -331,7 +331,7 @@ namespace Seguidor_de_Linha {
      * @param delay seconde delay to stop; eg: 1
     */
     //% blockId=robotbit_motor_rundelay block="Motor|%index|velocidade %speed|espera %delay|seg."
-    //% group="Motores" weight=57
+    //% group="Motores" weight=56
     //% speed.min=-255 speed.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function MotorRunDelay(index: Motors, speed: number, delay: number): void {
@@ -343,13 +343,13 @@ namespace Seguidor_de_Linha {
 
 
     //% blockId=robotbit_stop block="Parar Motor|%index|"
-    //% group="Motores" weight=56
+    //% group="Motores" weight=55
     export function MotorStop(index: Motors): void {
         MotorRun(index, 0);
     }
 
     //% blockId=robotbit_stop_all block="Parando todos os motores"
-    //% group="Motores" weight=55
+    //% group="Motores" weight=54
     //% blockGap=50
     export function MotorStopAll(): void {
         if (!initialized) {
