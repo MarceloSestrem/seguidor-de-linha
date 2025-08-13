@@ -1080,7 +1080,6 @@ namespace Seguidor_de_Linha {
          basic.pause(delay * 1000);
            
     }
-}
 const enum LcdPosition1602 {
     //% block="1"
     Pos1 = 1,
@@ -1440,9 +1439,10 @@ namespace makerbit {
      * @param i2cAddress I2C address of LCD in the range from 0 to 127, eg: 39
      */
     //% subcategory="LCD"
-    //% blockId="makerbit_lcd_set_address" block="connect LCD at I2C address %i2cAddress"
+    //% blockId="lcd_set_address" block="connect LCD at I2C address %i2cAddress"
     //% i2cAddress.min=0 i2cAddress.max=127
     //% weight=100
+     //% group="LCD"
     export function connectLcd(i2cAddress: number): void {
 
         if (lcdState && lcdState.i2cAddress == i2cAddress) {
@@ -1523,6 +1523,7 @@ namespace makerbit {
     //% subcategory="LCD"
     //% blockId="makerbit_lcd_is_connected" block="LCD is connected"
     //% weight=69
+      //% group="LCD" 
     export function isLcdConnected(): boolean {
         return !!lcdState || connect();
     }
@@ -1668,4 +1669,5 @@ namespace makerbit {
         setCharacter(char, position - 1, 16, 2);
     }
 
+}
 }
